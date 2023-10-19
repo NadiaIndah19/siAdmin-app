@@ -9,6 +9,16 @@ class Education extends Controller
 {
     public function index()
   {
-    return view('content.layanan.education');
+    return view('content.pelayanan.education');
+  }
+  
+  public function create()
+  {
+    return view('content.pelayanan.education');
+  }
+
+  public function update()
+  {
+    return view('content.pelayanan.education');
   }
 }

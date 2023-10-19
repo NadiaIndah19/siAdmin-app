@@ -16,16 +16,14 @@
 
 @section('content')
 <div class="row">
-  <div class="col-lg-8 mb-4 order-0">
+  <div class="col-lg-6 mb-4 order-0">
     <div class="card">
       <div class="d-flex align-items-end row">
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary">Welcome to Sistem Admin Baturetno!</h5>
-            <p class="mb-4">Dalam Website ini Anda dapat <span class="fw-bold">Mengurus, Melihat, dan Mengajukan</span> 
-              Informasi yang berkaitan dengan Kelurahan Baturetno.</p>
-
-            {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a> --}}
+            <p class="mb-4">Di Website ini Anda dapat <span class="fw-bold">Mendaftarkan, Mengajukan, dan Melihat</span> 
+              Data maupun Informasi yang berkaitan dengan Kelurahan Baturetno, Kabupaten Tuban.</p>
           </div>
         </div>
         <div class="col-sm-5 text-center text-sm-left">
@@ -35,59 +33,105 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-4 col-md-4 order-1">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/pengaduan.png')}}" alt="chart success" class="rounded">
-              </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
+    <div class="col-md mb-4 mb-md-0">
+      <div class="accordion mt-3" id="accordionExample">
+        <div class="card accordion-item active">
+          <h2 class="accordion-header" id="headingThree">
+            <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionThree" aria-expanded="true" aria-controls="accordionThree">
+              Profil Tuban
+            </button>
+          </h2>
+          <div id="accordionThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Kabupaten Tuban Merupakan salah satu Kabupaten dari 38 Kabupaten dan Kota yang ada di wilayah 
+              administratif Provinsi Jawa Timur. Wilayah Kabupaten Tuban berada di jalur pantai utara (Pantura) 
+              Pulau Jawa. Tuban disebut sebagai Kota Wali karena Tuban adalah salah satu kota di Jawa yang menjadi 
+              pusat penyebaran ajaran Agama Islam namun beberapa kalangan ada yang memberikan julukan sebagai kota 
+              tuak karena daerah Tuban sangat terkenal akan penghasil minuman (tuak & legen) yang berasal dari sari
+              bunga siwalan (ental). 
             </div>
-            <span class="fw-semibold d-block mb-1">Pengaduan</span>
-            <h3 class="card-title mb-2">28</h3>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> 2%</small>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/info.jpg')}}" alt="Credit Card" class="rounded">
+        <div class="card accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="false" aria-controls="accordionOne">
+              Contact Kelurahan 
+            </button>
+          </h2>
+          <div id="accordionOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Alamat: Gg. II No.437, Baturetno, Kec. Tuban, Kabupaten Tuban, Jawa Timur 62318</p>
+              <p>Telepon: (0356) 323174</p>
               </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <span class="fw-semibold d-block mb-1">Informasi</span>
-            <h3 class="card-title text-nowrap mb-1">142</h3>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
           </div>
         </div>
+        {{-- <div class="card accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
+              Misi Kab. Tuban
+            </button>
+          </h2>
+          <div id="accordionTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>1. Membangun dan Mewujudkan Infrastruktur Desa dan Utilitas Kota yang Terpadu, Partisipatif, 
+                Efektif, Berwawasan Lingkungan serta Selaras dengan Pertumbuhan dan Pemerataan Sosial, Ekonomi dan 
+                Budaya, serta Bertumpu pada Nilai-nilai Agama, Budaya, dan Kearifan Lokal</p>
+              <p>2. Meningkatkan Pengelolaan dan Nilai Tambah Sektor Pertanian secara Meluas (Pertanian, 
+              Perikanan, Peternakan, Perkebunan), Pariwisata, Perindustrian, Perdagangan, yang Berbasis 
+              Pemberdayaan dan Ekonomi Kerakyatan</p>
+              <p>3. Mewujudkan Sumber Daya Manusia Berkualiatas dan Terlatih, Menciptakan seluas-luasnya Kesempatan 
+              Berusaha, Membangun dan Memantapkan Sinergitas Daya Saing Usaha Ekonomi Lokal dan Pengembangan Ekonomi
+              Kreatif</p>
+              <p>4. Memantapkan Tata Kelola Pemerintah Daerah yang Baik, Profesional, Transparan, Akuntabel dan 
+              Sistem Pengawasan yang Efektif.</p>
+            </div>
+          </div>
+        </div> --}}
       </div>
     </div>
   </div>
+  <div class="col-lg-6 mb-4 order-0">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="{{asset('assets/img/backgrounds/bg.jpg')}}" alt="First slide" />
+          {{-- <div class="carousel-caption d-none d-md-block">
+            <h3>First slide</h3>
+            <p>Eos mutat malis maluisset et, agam ancillae quo te, in vim congue pertinacia.</p>
+          </div> --}}
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{{asset('assets/img/backgrounds/b2.jpg')}}" alt="Second slide" />
+          {{-- <div class="carousel-caption d-none d-md-block">
+            <h3>Second slide</h3>
+            <p>In numquam omittam sea.</p>
+          </div> --}}
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{{asset('assets/img/backgrounds/b1.jpg')}}" alt="Third slide" />
+          {{-- <div class="carousel-caption d-none d-md-block">
+            <h3>Third slide</h3>
+            <p>Lorem ipsum dolor sit amet, virtute consequat ea qui, minim graeco mel no.</p>
+          </div> --}}
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </div>
   <!-- Total Revenue -->
-  <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+  {{-- <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
     <div class="card">
       <div class="row row-bordered g-0">
         <div class="col-md-8">
@@ -135,79 +179,94 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <!--/ Total Revenue -->
-  <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
     <div class="row">
-      <div class="col-lg-6 col-md-12 col-6 mb-4">
+      <div class="col-2 mb-4">
         <div class="card">
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
               <div class="avatar flex-shrink-0">
                 <img src="{{asset('assets/img/icons/unicons/kis.jpg')}}" alt="Credit Card" class="rounded">
               </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Kartu Indonesia Sehat</span>
-            <h3 class="card-title text-nowrap mb-1">142</h3>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
+            <h6 class="d-block mb-1">Kartu Indonesia Sehat</h6>
+            <h2 class="card-title mb-1">142</h2>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.24%</small>
           </div>
         </div>
       </div>
-      <div class="col-6 mb-4">
+      <div class="col-2 mb-4">
         <div class="card">
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
               <div class="avatar flex-shrink-0">
                 <img src="{{asset('assets/img/icons/unicons/kip.png')}}" alt="Credit Card" class="rounded">
               </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Kartu Indonesia Pintar</span>
-            <h3 class="card-title mb-2">89</h3>
+            <h6 class="d-block mb-1">Kartu Indonesia Pintar</h6>
+            <h2 class="card-title mb-1">89</h2>
             <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +12.14%</small>
           </div>
         </div>
       </div>
-      <!-- </div>
-    <div class="row"> -->
-      {{-- <div class="col-12 mb-4">
+      <div class="col-2 mb-4">
         <div class="card">
           <div class="card-body">
-            <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-              <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                <div class="card-title">
-                  <h5 class="text-nowrap mb-2">Profile Report</h5>
-                  <span class="badge bg-label-warning rounded-pill">Year 2021</span>
-                </div>
-                <div class="mt-sm-auto">
-                  <small class="text-success text-nowrap fw-semibold"><i class='bx bx-chevron-up'></i> 68.2%</small>
-                  <h3 class="mb-0">$84,686k</h3>
-                </div>
+            <div class="card-title d-flex align-items-start justify-content-between">
+              <div class="avatar flex-shrink-0">
+                <img src="{{asset('assets/img/icons/unicons/cc-primary.png')}}" alt="chart success" class="rounded">
               </div>
-              <div id="profileReportChart"></div>
             </div>
+            <h6 class="d-block mb-1">Kartu Keluarga Sejahtera</h6>
+            <h2 class="card-title mb-1">28</h2>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> 2%</small>
           </div>
         </div>
-      </div> --}}
+      </div>
+      <div class="col-2 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title d-flex align-items-start justify-content-between">
+              <div class="avatar flex-shrink-0">
+                <img src="{{asset('assets/img/icons/unicons/info.jpg')}}" alt="Credit Card" class="rounded">
+              </div>
+            </div>
+            <h6 class="d-block mb-1">Informasi Berita Terkini</h6>
+            <h2 class="card-title mb-1">142</h2>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title d-flex align-items-start justify-content-between">
+              <div class="avatar flex-shrink-0">
+                <img src="{{asset('assets/img/icons/unicons/market.png')}}" alt="chart success" class="rounded">
+              </div>
+            </div>
+            <h6 class="d-block mb-1">Izin Usaha Perdagangan</h6>
+            <h2 class="card-title mb-1">28</h2>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> 2%</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title d-flex align-items-start justify-content-between">
+              <div class="avatar flex-shrink-0">
+                <img src="{{asset('assets/img/icons/unicons/pengaduan.png')}}" alt="Credit Card" class="rounded">
+              </div>
+            </div>
+            <h6 class="d-block mb-1">Pengaduan Terbaru</h6>
+            <h2 class="card-title mb-1">142</h2>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 <!-- Striped Rows -->
 <div class="card">
@@ -216,30 +275,24 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Logo Usaha</th>
           <th>Nama Usaha</th>
           <th>Bidang Usaha</th>
-          <th>Anggota</th>
+          <th>Tahun Berdiri</th>
           <th>Status</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
         <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
-          <td>Albert Cook</td>
           <td>
-            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                <img src="{{asset('assets/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-            </ul>
+            <div class="align-items-center avatar flex-shrink-0">
+              <img src="{{asset('assets/img/layouts/umkm2.jpg')}}" alt="Credit Card" class="rounded">
+            </div>
           </td>
+          <td>Depo Celentang</td>
+          <td>Material</td>
+          <td>2019</td>
           <td><span class="badge bg-label-primary me-1">Active</span></td>
           <td>
             <div class="dropdown">
@@ -252,22 +305,15 @@
           </td>
         </tr>
         <tr>
-          <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-          <td>Barry Hunter</td>
           <td>
-            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                <img src="{{asset('assets/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-            </ul>
+            <div class="align-items-center avatar flex-shrink-0">
+              <img src="{{asset('assets/img/layouts/umkm1.jpg')}}" alt="Credit Card" class="rounded">
+            </div>
           </td>
-          <td><span class="badge bg-label-success me-1">Completed</span></td>
+          <td>Es Teller Seger</td>
+          <td>Kuliner</td>
+          <td>2017</td>
+          <td><span class="badge bg-label-primary me-1">Active</span></td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
@@ -279,22 +325,15 @@
           </td>
         </tr>
         <tr>
-          <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
-          <td>Trevor Baker</td>
           <td>
-            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                <img src="{{asset('assets/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-            </ul>
+            <div class="align-items-center avatar flex-shrink-0">
+              <img src="{{asset('assets/img/layouts/umkm3.jpg')}}" alt="Credit Card" class="rounded">
+            </div>
           </td>
-          <td><span class="badge bg-label-info me-1">Scheduled</span></td>
+          <td>Chimilan Ratu</td>
+          <td>Kuliner</td>
+          <td>2022</td>
+          <td><span class="badge bg-label-primary me-1">Active</span></td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
@@ -306,22 +345,15 @@
           </td>
         </tr>
         <tr>
-          <td><i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong></td>
-          <td>Jerry Milton</td>
           <td>
-            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                <img src="{{asset('assets/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
-              </li>
-            </ul>
+            <div class="align-items-center avatar flex-shrink-0">
+              <img src="{{asset('assets/img/layouts/umkm4.jpg')}}" alt="Credit Card" class="rounded">
+            </div>
           </td>
-          <td><span class="badge bg-label-warning me-1">Pending</span></td>
+          <td>Njamoe</td>
+          <td>Healthy Kuliner</td>
+          <td>2015</td>
+          <td><span class="badge bg-label-primary me-1">Active</span></td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>

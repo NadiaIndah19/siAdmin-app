@@ -11,12 +11,15 @@ class Users extends Controller
   {
     return view('content.users.user-management');
   }
-}
 
-class EditUsers extends Controller
-{
-  public function index()
+  public function addUsers()
+  {
+    return view('content.users.add-user');
+  }
+
+  public function editUsers()
   {
     return view('content.users.edit-user');
   }
+
 }

@@ -11,4 +11,14 @@ class ComplaintsController extends Controller
   {
     return view('content.pengaduan.complaints');
   }
+  
+  public function create()
+  {
+    return view('content.pengaduan.create-complaints');
+  }
+
+  public function update()
+  {
+    return view('content.pengaduan.update-complaints');
+  }
 }

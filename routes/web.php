@@ -9,64 +9,80 @@ Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboar
 
 // user-management
 Route::get('/users/user-management', $controller_path . '\user\Users@index')->name('user-management');
-Route::get('/users/add-user', $controller_path . '\user\AddUsers@index')->name('user-management');
-Route::get('/users/edit-user', $controller_path . '\user\EditUsers@index')->name('user-management');
+Route::post('/users/add-user', $controller_path . '\user\Users@addUsers')->name('user-management');
+Route::post('/users/edit-user', $controller_path . '\user\Users@editUsers')->name('user-management');
 
 //kependudukan
 //id-card
-Route::get('/kependudukan/id-card/id-card-person', $controller_path . '\admin\KTP@index')->name('kependudukan-id-card-person');
-Route::get('/kependudukan/id-card/id-card-person', $controller_path . '\admin\KTP@index')->name('kependudukan-id-card-person');
-Route::get('/kependudukan/id-card/id-card-person', $controller_path . '\admin\KTP@index')->name('kependudukan-id-card-person');
+Route::get('/kependudukan/id-card/id-card-person', $controller_path . '\administrasi\IdCard@index')->name('kependudukan-id-card-person');
+Route::get('/kependudukan/id-card/create-id-card', $controller_path . '\administrasi\IdCard@create')->name('kependudukan-id-card-person');
+Route::get('/kependudukan/id-card/update-id-card', $controller_path . '\administrasi\IdCard@update')->name('kependudukan-id-card-person');
 
 //kk-card
-Route::get('/kependudukan/fams-list/family-card', $controller_path . '\admin\FamilyCard@index')->name('kependudukan-family-card');
-Route::get('/kependudukan/fams-list/create-kk', $controller_path . '\admin\FamilyCard@index')->name('kependudukan-family-card');
-Route::get('/kependudukan/fams-list/update-kk', $controller_path . '\admin\FamilyCard@index')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/family-card', $controller_path . '\administrasi\KKCard@index')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/create-kk', $controller_path . '\administrasi\KKCard@create')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/update-kk', $controller_path . '\administrasi\KKCard@update')->name('kependudukan-family-card');
 
 //birth-card
-Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\admin\BirthCard@index')->name('kependudukan-birth-card');
-Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\admin\BirthCard@index')->name('kependudukan-birth-card');
-Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\admin\BirthCard@index')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\administrasi\BirthCard@index')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/create-birth-card', $controller_path . '\administrasi\BirthCard@create')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/update-birth-card', $controller_path . '\administrasi\BirthCard@update')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/view-birth-card', $controller_path . '\administrasi\BirthCard@view')->name('kependudukan-birth-card');
 
 //death-card
-Route::get('/kependudukan/death-list/death-card', $controller_path . '\admin\DeathCard@index')->name('kependudukan-death-card');
-Route::get('/kependudukan/death-list/death-card', $controller_path . '\admin\DeathCard@index')->name('kependudukan-death-card');
-Route::get('/kependudukan/death-list/death-card', $controller_path . '\admin\DeathCard@index')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/death-card', $controller_path . '\administrasi\DeathCard@index')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/create-death-card', $controller_path . '\administrasi\DeathCard@create')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/update-death-card', $controller_path . '\administrasi\DeathCard@update')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/view-death-card', $controller_path . '\administrasi\DeathCard@view')->name('kependudukan-death-card');
 
 //marriage-card
-Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\admin\MarriageCard@index')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\admin\MarriageCard@index')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\admin\MarriageCard@index')->name('kependudukan-marriage-card');
-
-//kis
-Route::get('/kartu-indonesia/kis-card', $controller_path . '\card\KISCard@index')->name('card-kis');
-Route::get('/kartu-indonesia/kis-card', $controller_path . '\card\KISCard@index')->name('card-kis');
-Route::get('/kartu-indonesia/kis-card', $controller_path . '\card\KISCard@index')->name('card-kis');
-
-//kip
-Route::get('/kartu-indonesia/kip-card', $controller_path . '\card\KIPCard@index')->name('card-kip');
-Route::get('/kartu-indonesia/kip-card', $controller_path . '\card\KIPCard@index')->name('card-kip');
-Route::get('/kartu-indonesia/kip-card', $controller_path . '\card\KIPCard@index')->name('card-kip');
+Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\administrasi\MarriageCard@index')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/create-marriage-card', $controller_path . '\administrasi\MarriageCard@create')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/update-marriage-card', $controller_path . '\administrasi\MarriageCard@update')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageCard@view')->name('kependudukan-marriage-card');
 
 //pengaduan
-Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('pengajuan-info-complaints');
-Route::get('/pengaduan/news', $controller_path . '\complaint_news\NewsController@index')->name('pengajuan-info-news');
+Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('info-complaints');
+Route::get('/pengaduan/create-complaints', $controller_path . '\complaint_news\ComplaintsController@create')->name('info-complaints');
+Route::get('/pengaduan/update-complaints', $controller_path . '\complaint_news\ComplaintsController@update')->name('info-complaints');
+
+//info
+Route::get('/info/news', $controller_path . '\complaint_news\NewsController@index')->name('info-news');
 
 //perizinan
-Route::get('/perizinan/building-permit', $controller_path . '\permission\BuildingPermit@index')->name('izin-bangunan');
-Route::get('/perizinan/business-licence', $controller_path . '\permission\BusinessLicence@index')->name('izin-bisnis');
+Route::get('/perizinan/building/building-permit', $controller_path . '\permission\BuildingPermit@index')->name('izin-bangunan');
+Route::get('/perizinan/building/create-building-permit', $controller_path . '\permission\BuildingPermit@create')->name('izin-bangunan');
+Route::get('/perizinan/building/update-building-permit', $controller_path . '\permission\BuildingPermit@update')->name('izin-bangunan');
+Route::get('/perizinan/building/view-building-permit', $controller_path . '\permission\BuildingPermit@view')->name('izin-bangunan');
+
+Route::get('/perizinan/bussiness/bussiness-licence', $controller_path . '\permission\BussinessLicence@index')->name('izin-bisnis');
+Route::get('/perizinan/bussiness/create-bussiness-licence', $controller_path . '\permission\BussinessLicence@create')->name('izin-bisnis');
+Route::get('/perizinan/bussiness/update-bussiness-licence', $controller_path . '\permission\BussinessLicence@update')->name('izin-bisnis');
+Route::get('/perizinan/bussiness/view-bussiness-licence', $controller_path . '\permission\BussinessLicence@view')->name('izin-bisnis');
 
 //layanan
-Route::get('/layanan/education', $controller_path . '\layanan\education@index')->name('layanan-education');
-Route::get('/layanan/tax-finance', $controller_path . '\layanan\TaxFinance@index')->name('layanan-tax-finance');
-Route::get('/layanan/kks-card', $controller_path . '\layanan\KKSCard@index')->name('layanan-kks-card');
+Route::get('/pelayanan/education', $controller_path . '\layanan\Education@index')->name('pelayanan-education');
+Route::get('/pelayanan/tax-finance', $controller_path . '\layanan\TaxFinance@index')->name('pelayanan-tax-finance');
+
+//kks
+Route::get('/pelayanan/kks/kks-card', $controller_path . '\layanan\KKS@index')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/create-kks-card', $controller_path . '\layanan\KKS@create')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/update-kks-card', $controller_path . '\layanan\KKS@update')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/view-kks-card', $controller_path . '\layanan\KKS@view')->name('pelayanan-kks-card');
+
+//kis
+Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@index')->name('pelayanan-card-kis');
+Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@create')->name('pelayanan-card-kis');
+Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@update')->name('pelayanan-card-kis');
+
+//kip
+Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@index')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@create')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@update')->name('pelayanan-card-kip');
 
 //statistik
-Route::get('/layanan/education', $controller_path . '\layanan\education@index')->name('layanan-education');
-Route::get('/layanan/tax-finance', $controller_path . '\layanan\TaxFinance@index')->name('layanan-tax-finance');
-
-
-
+// Route::get('/pelayanan/education', $controller_path . '\pelayanan\education@index')->name('pelayanan-education');
+// Route::get('/pelayanan/tax-finance', $controller_path . '\pelayanan\TaxFinance@index')->name('pelayanan-tax-finance');
 
 // ===============================================================================================================
 // layout

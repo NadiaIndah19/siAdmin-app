@@ -51,38 +51,16 @@
       ]
     },
     {
-      "name": "Kartu Indonesia",
-      "icon": "menu-icon tf-icons bx bx-id-card",
-      "slug": "card",
-      "submenu": [
-        {
-          "url": "/kartu-indonesia/kis-card",
-          "name": "KIS (Kartu Indonesia Sehat)",
-          "slug": "card-kis"
-        },
-        {
-          "url": "/kartu-indonesia/kip-card",
-          "name": "KIP (Kartu Indonesia Pintar)",
-          "slug": "card-kip"
-        }
-      ]
+      "name": "Pengaduan",
+      "icon": "menu-icon tf-icons bx bx-box",
+      "slug": "info-complaints",
+      "url": "/pengaduan/complaints"
     },
     {
-      "name": "Pengaduan dan Informasi",
+      "name": "Informasi",
       "icon": "menu-icon tf-icons bx bx-info-circle",
-      "slug": "pengajuan",
-      "submenu": [
-        {
-          "url": "/pengaduan/complaints",
-          "name": "Pengaduan",
-          "slug": "pengajuan-info-complaints"
-        },
-        {
-          "url": "/pengaduan/news",
-          "name": "Informasi Publik",
-          "slug": "pengajuan-info-news"
-        }
-      ]
+      "slug": "info-news",
+      "url": "/info/news"
     },
     {
       "name": "Perizinan",
@@ -90,36 +68,41 @@
       "slug": "izin",
       "submenu": [
         {
-          "url": "/perizinan/building-permit",
+          "url": "/perizinan/building/building-permit",
           "name": "IMB (Izin Mendirikan Bangunan)",
           "slug": "izin-bangunan"
         },
         {
-          "url": "/perizinan/business-licence",
+          "url": "/perizinan/bussiness/bussiness-licence",
           "name": "SIUP (Surat Izin Usaha Perdagangan)",
           "slug": "izin-bisnis"
         }
       ]
     },
     {
-      "name": "Layanan",
+      "name": "Pelayanan",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
-      "slug": "layanan",
+      "slug": "pelayanan",
       "submenu": [
         {
-          "url": "/layanan/education",
-          "name": "Pendidikan",
-          "slug": "layanan-education"
-        },
-        {
-          "url": "/layanan/tax-finance",
+          "url": "/pelayanan/tax-finance",
           "name": "Pembayaran Pajak",
-          "slug": "layanan-tax-finance"
+          "slug": "pelayanan-tax-finance"
         },
         {
-          "url": "/layanan/kks-card",
+          "url": "/pelayanan/kks/kks-card",
           "name": "KKS (Kartu Keluarga Sejahtera)",
-          "slug": "layanan-kks-card"
+          "slug": "pelayanan-kks-card"
+        },
+        {
+          "url": "/pelayanan/kis/kis-card",
+          "name": "KIS (Kartu Indonesia Sehat)",
+          "slug": "pelayanan-card-kis"
+        },
+        {
+          "url": "/pelayanan/kip/kip-card",
+          "name": "KIP (Kartu Indonesia Pintar)",
+          "slug": "pelayanan-card-kip"
         }
       ]
     },
