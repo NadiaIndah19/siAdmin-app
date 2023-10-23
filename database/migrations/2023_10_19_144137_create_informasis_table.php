@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('jenis_berita');
             $table->date('tanggal_berita');
             $table->string('tempat_kejadian');
-            $table->text('kronologi');            
+            $table->text('kronologi');         
+            $table->string('image');   
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\KTPController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,12 @@ Route::group(['middleware' => 'auth'],function () {
 
 
     // ==================== INFORMASI ==================================
+    Route::prefix('info')->group(function () {
+        Route::get('/news', [InformasiController::class,'index'])->name('informasi.index');
+        Route::post('/news/store', [InformasiController::class,'store'])->name('informasi.store');
+        Route::post('/news/delete', [InformasiController::class,'delete'])->name('informasi.destroy');
+     });
+    
 
     // =================================================================
 
@@ -102,7 +109,7 @@ Route::get('/pengaduan/create-complaints', $controller_path . '\complaint_news\C
 Route::get('/pengaduan/update-complaints', $controller_path . '\complaint_news\ComplaintsController@update')->name('info-complaints');
 
 //info
-Route::get('/info/news', $controller_path . '\complaint_news\NewsController@index')->name('info-news');
+// Route::get('/info/news', $controller_path . '\complaint_news\NewsController@index')->name('info-news');
 
 //perizinan
 Route::get('/perizinan/building/building-permit', $controller_path . '\permission\BuildingPermit@index')->name('izin-bangunan');
