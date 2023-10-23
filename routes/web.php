@@ -1,22 +1,77 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KTPController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 $controller_path = 'App\Http\Controllers';
 
+
+Auth::routes();
+
+Route::group(['middleware' => 'auth'],function () {    
+    Route::get('/',[HomeController::class,'index'])->name('home');
+
+    // ============== USER MANAGEMENT =================================
+    Route::prefix('users')->group(function () {        
+        Route::get('/user-management',[UserController::class,'index'])->name('user-management');
+        Route::get('/add-user', [UserController::class,'create'])->name('user-management.create');
+        Route::post('/add-user', [UserController::class,'store'])->name('user-management.store');
+
+        Route::get('/{id}/edit-user', [UserController::class,'edit'])->name('user-management.edit');
+        Route::put('/{id}/edit-user', [UserController::class,'update'])->name('user-management.update');
+        Route::post('/edit-user', [UserController::class,'destroy'])->name('user-management.destroy');
+    });
+
+    // ================================================================
+
+
+
+    // =============== KTP =============================================
+    Route::prefix('kependudukan')->group(function () {        
+        Route::get('/id-card/id-card-person', [KTPController::class,'index'])->name('ktp.index');
+        Route::get('/id-card/create-id-card', [KTPController::class,'create'])->name('ktp.create');
+        Route::post('/id-card/store-id-card', [KTPController::class,'store'])->name('ktp.store');
+        Route::get('/id-card/{id}/update-id-card', [KTPController::class,'edit'])->name('ktp.edit');
+        Route::PUT('/id-card/{id}/edit-id-card', [KTPController::class,'update'])->name('ktp.update');
+        Route::post('/id-card/create-id-card', [KTPController::class,'destroy'])->name('ktp.destroy');
+    });
+    
+
+    // ================================================================
+
+    // =================== AKTA PERNIKAHAN =============================
+    // =================================================================
+
+
+    // ==================== INFORMASI ==================================
+
+    // =================================================================
+
+});
+
+
+
+
+
+
+
+
+
+
+// ========================================== DEFAULT TEMPLATE ROUTE ======================================================
+
 // Main Page Route
-Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard');
+// Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard');
 
 // user-management
-Route::get('/users/user-management', $controller_path . '\user\Users@index')->name('user-management');
-Route::post('/users/add-user', $controller_path . '\user\Users@addUsers')->name('user-management');
-Route::post('/users/edit-user', $controller_path . '\user\Users@editUsers')->name('user-management');
+
 
 //kependudukan
 //id-card
-Route::get('/kependudukan/id-card/id-card-person', $controller_path . '\administrasi\IdCard@index')->name('kependudukan-id-card-person');
-Route::get('/kependudukan/id-card/create-id-card', $controller_path . '\administrasi\IdCard@create')->name('kependudukan-id-card-person');
-Route::get('/kependudukan/id-card/update-id-card', $controller_path . '\administrasi\IdCard@update')->name('kependudukan-id-card-person');
+
 
 //kk-card
 Route::get('/kependudukan/fams-list/family-card', $controller_path . '\administrasi\KKCard@index')->name('kependudukan-family-card');
@@ -145,3 +200,7 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

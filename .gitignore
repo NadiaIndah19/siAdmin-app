@@ -17,6 +17,7 @@ yarn-error.log
 /public/mix-manifest.json
 # But not these files...
 !/public/assets/*
-/public/assets/js
+/public/assets/jss
 /public/assets/css
 /public/assets/vendor
+.env

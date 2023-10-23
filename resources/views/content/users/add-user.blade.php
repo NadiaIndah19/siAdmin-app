@@ -14,26 +14,27 @@
         <small class="text-muted float-end">Masukkan data dengan benar</small>
       </div>
       <div class="card-body">
-        <form>
+        <form action="{{ route('user-management.store') }}" method="POST">
+          @csrf
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-              <input type="text" class="form-control" id="basic-icon-default-fullname" aria-describedby="basic-icon-default-fullname2" />
+              <input type="text" name="name" class="form-control" id="basic-icon-default-fullname" aria-describedby="basic-icon-default-fullname2" required/>
             </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-nik">NIK</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-nik2" class="input-group-text"><i class="bx bxs-user-detail"></i></span>
-              <input type="text" id="basic-icon-default-nik" class="form-control" aria-describedby="basic-icon-default-nik2" />
+              <input type="text" name="nik" id="basic-icon-default-nik" class="form-control" aria-describedby="basic-icon-default-nik2" required/>
             </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-email">Email</label>
             <div class="input-group input-group-merge">
               <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-              <input type="text" id="basic-icon-default-email" class="form-control" aria-describedby="basic-icon-default-email2" />
+              <input type="text" name="email" id="basic-icon-default-email" class="form-control" aria-describedby="basic-icon-default-email2" required/>
               <span id="basic-icon-default-email2" class="input-group-text">@gmail.com</span>
             </div>
             {{-- <div class="form-text"> You can use letters, numbers & periods </div> --}}
@@ -42,14 +43,18 @@
             <label class="form-label" for="basic-icon-default-password">Password</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-password2" class="input-group-text"><i class="bx bx-key"></i></span>
-              <input type="text" id="basic-icon-default-password" class="form-control password-mask" aria-describedby="basic-icon-default-password2" />
+              <input type="text" name="password" id="basic-icon-default-password" class="form-control password-mask" aria-describedby="basic-icon-default-password2" required/>
             </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-role">Role</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-role2" class="input-group-text"><i class="bx bx-list-ul"></i></span>
-              <input type="text" id="basic-icon-default-role" class="form-control role-mask" aria-describedby="basic-icon-default-role2" />
+              <select name="role" id="" class="form-control" required>
+                @foreach ($roles as $item)
+                   <option value="{{$item->id}}">{{ucfirst($item->name)}}</option>
+                @endforeach                                  
+              </select>
             </div>
           </div>
           {{-- <div class="mb-3">

@@ -31,31 +31,69 @@
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
+        @php
+            $no=1;
+        @endphp
+        @foreach ($ktp as $item)
         <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-          <td>31213423453232</td>
-          <td>Albert Cook</td>
-          <td>Surabaya, 11 November 1999</td>
-          <td>Laki-Laki</td>
-          <td>A</td>
-          <td>Arjomulyo No 5 RT 01 RW 02</td>
-          <td>Islam</td>
-          <td>Belum Menikah</td>
-          <td>Pelajar/Mahasiswa</td>
+          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$no++}}</strong></td>
+          <td>{{$item->nik}}</td>
+          <td>{{$item->nama}}</td>
+          <td>{{ucfirst($item->kota_kelahiran)}}, {{\Carbon\Carbon::parse($item->tanggal_lahir)->format('m F Y')}}</td>
+          <td>{{$item->jenis_kelamin}}</td>
+          <td>{{$item->gol_darah}}</td>
+          <td>{{$item->alamat}}</td>
+          <td>{{$item->agama}}</td>
+          <td>{{$item->status_perkawinan}}</td>
+          <td>{{$item->pekerjaan}}</td>
           <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url('kependudukan/id-card/update-id-card') }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-              </div>
-            </div>
+            <a href="{{ route('ktp.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
+            <button onclick="destroy({{$item->id}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
           </td>
-        </tr>
+        </tr> 
+        @endforeach
+       
       </tbody>
     </table>
   </div>
 </div>
 <!--/ Basic Bootstrap Table -->
 
+@endsection
+
+@section('js')
+    <script>
+        function destroy(id) {          
+          swal({
+            title: "Are you sure?",            
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+              type: 'POST',
+              url: "{{ route('ktp.destroy') }}",
+              dataType: 'html',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  "id": id,
+                  "_token": "{{ csrf_token() }}"
+              },
+
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
+        }
+    </script>
 @endsection

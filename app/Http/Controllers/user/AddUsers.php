@@ -11,5 +11,7 @@ class AddUsers extends Controller
   {
     return view('content.users.add-user');
   }
+
+  
 }
 

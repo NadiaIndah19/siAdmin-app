@@ -21,67 +21,69 @@
           <th>Nama</th>
           <th>NIK</th>
           <th>Email</th>
-          <th>Password</th>
           <th>Role</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-        <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-          <td>Nadia Indah</td>
-          <td>2423131312321232</td>
-          <td>user@gmail.com</td>
-          <td>*********</td>
-          <td>Warga</td>
-          <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url('users/edit-user') }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>2</strong></td>
-          <td>Nadia Indah</td>
-          <td>2423131312321232</td>
-          <td>user@gmail.com</td>
-          <td>*********</td>
-          <td>Warga</td>
-          <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url('users/edit-user') }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>3</strong></td>
-          <td>Nadia Indah</td>
-          <td>2423131312321232</td>
-          <td>user@gmail.com</td>
-          <td>*********</td>
-          <td>Warga</td>
-          <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url('users/edit-user') }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-              </div>
-            </div>
-          </td>
-        </tr>
+        @php
+            $no=1;
+        @endphp
+        @foreach ($user as $item)
+          <tr>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$no++}}</strong></td>
+            <td>{{ucfirst($item->name)}}</td>
+            <td>{{$item->nik}}</td>
+            <td>{{$item->email}}</td>
+            <td>{{$item->roles ? $item->roles[0]['name'] : '-'}}</td>
+            <td>
+                <a href="{{ route('user-management.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
+                <button onclick="destroy({{$item->id}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
+            </td>
+          </tr>   
+        @endforeach
+            
       </tbody>
     </table>
   </div>
 </div>
 <!--/ Basic Bootstrap Table -->
 
+@endsection
+
+@section('js')
+    <script>
+        function destroy(id) {          
+          swal({
+            title: "Are you sure?",            
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+              type: 'POST',
+              url: "{{ route('user-management.destroy') }}",
+              dataType: 'html',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  "id": id,
+                  "_token": "{{ csrf_token() }}"
+              },
+
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
+        }
+    </script>
 @endsection

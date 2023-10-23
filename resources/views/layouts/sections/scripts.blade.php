@@ -16,3 +16,17 @@
 <!-- BEGIN: Page JS-->
 @yield('page-script')
 <!-- END: Page JS-->
+@yield('js')
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    @if (session('success-create'))
+     swal("Good job!", "Anda Berhasil Menambahkan Data !", "success");
+    @endif
+
+    @if (session('success-update'))
+     swal("Good job!", "Anda Berhasil Mengubah Data !", "success");
+    @endif
+</script>
+
