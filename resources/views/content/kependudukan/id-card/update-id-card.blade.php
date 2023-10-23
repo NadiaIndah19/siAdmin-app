@@ -119,9 +119,9 @@
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <embed type="application/pdf" src="{{$ktp->file_kk}}" width="400" height="200" alt="ini adalah file kk"></embed>
+              <embed type="application/pdf" src="{{$ktp->file_kk}}" width="400" height="200" alt="ini adalah file kk"></embed> <br>
               <label for="formFile" class="form-label">File KK</label>
-              <input name="file" class="form-control" type="file" id="formFile" required>
+              <input name="file" class="form-control" type="file" id="formFile" >
             </div>
           </div>
           <button type="submit" class="btn btn-primary">Send</button>
