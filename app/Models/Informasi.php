@@ -15,7 +15,8 @@ class Informasi extends Model
         'jenis_berita',
         'tanggal_berita',
         'tempat_kejadian',
-        'kronologi'
+        'kronologi',
+        'image'
     ];
 
 }

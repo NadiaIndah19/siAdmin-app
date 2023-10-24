@@ -60,16 +60,18 @@ class KTPController extends Controller
     public function update(Request $request , $id)
     {
        $file = $request->file('file');
+       
        $ktp = KTP::where('id',$id)->first();
        $newName = $ktp->file_kk;
 
        if ($file) {
+        
           Storage::disk('public')->delete($ktp->file_kk);
           $filename = $file->getClientOriginalName();            
           $time = time();
           $newName = $time.$filename;            
           $path = Storage::putFileAs('ktp',$file,$newName);
-          $filename = $path;          
+          $newName = $path;          
        }
 
        $ktp->update([
@@ -83,7 +85,7 @@ class KTPController extends Controller
           'agama' => $request->agama ,
           'status_perkawinan' => $request->status_perkawinan,
           'pekerjaan' => $request->pekerjaan,
-          'file_kk' => $filename
+          'file_kk' => $newName
        ]);
 
        return redirect()->route('ktp.index')->with('success-update','Berhasil Mengubah Data');
