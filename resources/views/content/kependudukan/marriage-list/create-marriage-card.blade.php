@@ -27,146 +27,150 @@
             <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-messages" aria-controls="navs-justified-messages" aria-selected="false"><i class="tf-icons bx bx-file"></i> Upload Files</button>
           </li> --}}
         </ul>
+        <form action="{{ route('pernikahan.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf  
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
-            <div class="row">
-              <div class="mb-3 col-md-6">
-                <label for="namelk" class="form-label">Nama Lengkap</label>
-                <input class="form-control" type="text" id="namelk" name="namelk" autofocus/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="nik" class="form-label">NIK</label>
-                <input class="form-control" type="text" id="nik" name="nik" autofocus/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="tptbirth" class="form-label">Tempat Lahir</label>
-                <input type="text" class="form-control" id="tptbirth" name="tptbirth" maxlength="6"/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
-                <div class="input-group input-group-merge">
-                  <input class="form-control" type="date" value="11-02-2023" id="html5-tglbirth" />
+                  
+            <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="namelk" class="form-label">Nama Lengkap</label>
+                  <input class="form-control" type="text" id="namelk" name="nama_laki" autofocus/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nik" class="form-label">NIK</label>
+                  <input class="form-control" type="text" id="nik" name="nik_laki" autofocus/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="tptbirth" class="form-label">Tempat Lahir</label>
+                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_laki" maxlength="6"/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
+                  <div class="input-group input-group-merge">
+                    <input class="form-control" type="date" name="tanggal_lahir_laki" value="11-02-2023" id="html5-tglbirth" />
+                  </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nameAyah" class="form-label">Nama Ayah</label>
+                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_laki"maxlength="6" />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nameIbu" class="form-label">Nama Ibu</label>
+                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_laki"maxlength="6"/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="address" class="form-label">Alamat</label>
+                  <input type="text" class="form-control" id="address" name="alamat_laki"/>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filepengantar" class="form-label">Surat Pengantar Desa</label>
+                  <input class="form-control" type="file" name="surat_desa_laki" id="filepengantar" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKTP" class="form-label">File KTP</label>
+                  <input class="form-control" type="file" name="ktp_laki" id="fileKTP" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileAKTAKelahiran" class="form-label">File AKTA Kelahiran</label>
+                  <input class="form-control" type="file" name="akta_kelahiran_laki" id="fileAKTAKelahiran" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKK" class="form-label">File KK</label>
+                  <input class="form-control" type="file" id="fileKK" name="kk_laki" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKTPortu" class="form-label">File KTP Orang Tua</label>
+                  <input class="form-control" type="file" name="ktp_ortu_laki" id="fileKTPortu" accept="application/pdf,application/vnd.ms-excel" /> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filesuratNikah" class="form-label">File Surat Nikah Ortu</label>
+                  <input class="form-control" type="file" id="filesuratNikah" name="surat_nikah_ortu_lk" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filefoto" class="form-label">File Foto</label>
+                  <input class="form-control" type="file" id="filefoto" name="foto_laki" accept="image/png, image/gif, image/jpeg">
+                </div>
+                <div class="mt-2">
+                  <button type="submit" class="btn btn-primary me-2">Next</button>
                 </div>
               </div>
-              <div class="mb-3 col-md-6">
-                <label for="nameAyah" class="form-label">Nama Ayah</label>
-                <input type="text" class="form-control" id="nameAyah" name="nameAyah"maxlength="6" />
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="nameIbu" class="form-label">Nama Ibu</label>
-                <input type="text" class="form-control" id="nameIbu" name="nameIbu"maxlength="6"/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="address" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="address" name="address"/>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filepengantar" class="form-label">Surat Pengantar Desa</label>
-                <input class="form-control" type="file" id="filepengantar" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTP" class="form-label">File KTP</label>
-                <input class="form-control" type="file" id="fileKTP">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileAKTAKelahiran" class="form-label">File AKTA Kelahiran</label>
-                <input class="form-control" type="file" id="fileAKTAKelahiran">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKK" class="form-label">File KK</label>
-                <input class="form-control" type="file" id="fileKK">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTPortu" class="form-label">File KTP Orang Tua</label>
-                <input class="form-control" type="file" id="fileKTPortu" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filesuratNikah" class="form-label">File Surat Nikah Ortu</label>
-                <input class="form-control" type="file" id="filesuratNikah" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filefoto" class="form-label">File Foto</label>
-                <input class="form-control" type="file" id="filefoto" multiple>
-              </div>
-              <div class="mt-2">
-                <button type="submit" class="btn btn-primary me-2">Next</button>
-              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
-            <div class="row">
-              <div class="mb-3 col-md-6">
-                <label for="namepr" class="form-label">Nama Lengkap</label>
-                <input class="form-control" type="text" id="namepr" name="namepr" autofocus/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="nik" class="form-label">NIK</label>
-                <input class="form-control" type="text" id="nik" name="nik" autofocus/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="tptbirth" class="form-label">Tempat Lahir</label>
-                <input type="text" class="form-control" id="tptbirth" name="tptbirth" maxlength="6"/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
-                <div class="input-group input-group-merge">
-                  <input class="form-control" type="date" value="11-02-2023" id="html5-tglbirth" />
+            <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="namepr" class="form-label">Nama Lengkap</label>
+                  <input class="form-control" type="text" id="namepr" name="nama_pr" autofocus/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nik" class="form-label">NIK</label>
+                  <input class="form-control" type="text" id="nik" name="nik_pr" autofocus/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="tptbirth" class="form-label">Tempat Lahir</label>
+                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_pr" maxlength="6"/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
+                  <div class="input-group input-group-merge">
+                    <input class="form-control" type="date" value="11-02-2023" name="tanggal_lahir_pr" id="html5-tglbirth" />
+                  </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nameAyah" class="form-label">Nama Ayah</label>
+                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_pr"maxlength="6" />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nameIbu" class="form-label">Nama Ibu</label>
+                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_pr"maxlength="6"/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="nameSaksi" class="form-label">Nama Saksi</label>
+                  <input type="text" class="form-control" id="nameSaksi" name="nama_saksi"maxlength="6"/>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="address" class="form-label">Alamat</label>
+                  <input type="text" class="form-control" id="address" name="alamat_pr"/>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filepengantar" class="form-label">Surat Pengantar Desa</label>
+                  <input class="form-control" type="file" id="filepengantar" name="surat_desa_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKTP" class="form-label">File KTP</label>
+                  <input class="form-control" type="file" id="fileKTP" name="ktp_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileAKTAKelahiran" class="form-label">File AKTA Kelahiran</label>
+                  <input class="form-control" type="file" id="fileAKTAKelahiran" name="akta_kelahiran_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKK" class="form-label">File KK</label>
+                  <input class="form-control" type="file" id="fileKK" name="kk_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKTPortu" class="form-label">File KTP Orang Tua</label>
+                  <input class="form-control" type="file" id="fileKTPortu" name="ktp_ortu_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filesuratNikah" class="form-label">File Surat Nikah Ortu</label>
+                  <input class="form-control" type="file" id="filesuratNikah" name="surat_nikah_ortu_pr" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fileKTPSaksi" class="form-label">File KTP Saksi</label>
+                  <input class="form-control" type="file" id="fileKTPSaksi" name="ktp_saksi" accept="application/pdf,application/vnd.ms-excel" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="filefoto" class="form-label">File Foto</label>
+                  <input class="form-control" type="file" id="filefoto" name="foto_pr" accept="image/png, image/gif, image/jpeg">
+                </div>
+                <div class="mt-2">
+                  <button type="reset" class="btn btn-outline-secondary">Back</button>
+                  <button type="submit" class="btn btn-primary me-2">Save changes</button>
                 </div>
               </div>
-              <div class="mb-3 col-md-6">
-                <label for="nameAyah" class="form-label">Nama Ayah</label>
-                <input type="text" class="form-control" id="nameAyah" name="nameAyah"maxlength="6" />
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="nameIbu" class="form-label">Nama Ibu</label>
-                <input type="text" class="form-control" id="nameIbu" name="nameIbu"maxlength="6"/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="nameSaksi" class="form-label">Nama Saksi</label>
-                <input type="text" class="form-control" id="nameSaksi" name="nameSaksi"maxlength="6"/>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="address" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="address" name="address"/>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filepengantar" class="form-label">Surat Pengantar Desa</label>
-                <input class="form-control" type="file" id="filepengantar" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTP" class="form-label">File KTP</label>
-                <input class="form-control" type="file" id="fileKTP">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileAKTAKelahiran" class="form-label">File AKTA Kelahiran</label>
-                <input class="form-control" type="file" id="fileAKTAKelahiran">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKK" class="form-label">File KK</label>
-                <input class="form-control" type="file" id="fileKK">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTPortu" class="form-label">File KTP Orang Tua</label>
-                <input class="form-control" type="file" id="fileKTPortu" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filesuratNikah" class="form-label">File Surat Nikah Ortu</label>
-                <input class="form-control" type="file" id="filesuratNikah" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTPSaksi" class="form-label">File KTP Saksi</label>
-                <input class="form-control" type="file" id="fileKTPSaksi" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filefoto" class="form-label">File Foto</label>
-                <input class="form-control" type="file" id="filefoto" multiple>
-              </div>
-              <div class="mt-2">
-                <button type="reset" class="btn btn-outline-secondary">Back</button>
-                <button type="submit" class="btn btn-primary me-2">Save changes</button>
-              </div>
             </div>
-          </div>
+        
           {{-- <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -208,6 +212,7 @@
             </div>
           </div> --}}
         </div>
+      </form>
       </div>
     </div>    
     {{-- <div class="row mb-4">
