@@ -28,11 +28,9 @@ Route::group(['middleware' => 'auth'],function () {
 
     // ================================================================
 
-
-
     // =============== KTP =============================================
     Route::prefix('kependudukan')->group(function () {        
-        Route::get('/id-card/id-card-person', [KTPController::class,'index'])->name('ktp.index');
+        Route::get('/id-card/id-card-person', [KTPController::class,'index'])->name('kependudukan-ktp.index');
         Route::get('/id-card/create-id-card', [KTPController::class,'create'])->name('ktp.create');
         Route::post('/id-card/store-id-card', [KTPController::class,'store'])->name('ktp.store');
         Route::get('/id-card/{id}/update-id-card', [KTPController::class,'edit'])->name('ktp.edit');
@@ -46,7 +44,6 @@ Route::group(['middleware' => 'auth'],function () {
     // =================== AKTA PERNIKAHAN =============================
     // =================================================================
 
-
     // ==================== INFORMASI ==================================
     Route::prefix('info')->group(function () {
         Route::get('/news', [InformasiController::class,'index'])->name('informasi.index');
@@ -59,49 +56,33 @@ Route::group(['middleware' => 'auth'],function () {
 
 });
 
-
-
-
-
-
-
-
-
-
 // ========================================== DEFAULT TEMPLATE ROUTE ======================================================
 
 // Main Page Route
 // Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard');
 
-// user-management
-
-
-//kependudukan
-//id-card
-
-
 //kk-card
-Route::get('/kependudukan/fams-list/family-card', $controller_path . '\administrasi\KKCard@index')->name('kependudukan-family-card');
-Route::get('/kependudukan/fams-list/create-kk', $controller_path . '\administrasi\KKCard@create')->name('kependudukan-family-card');
-Route::get('/kependudukan/fams-list/update-kk', $controller_path . '\administrasi\KKCard@update')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/family-card', $controller_path . '\administrasi\KKController@index')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/create-kk', $controller_path . '\administrasi\KKController@create')->name('kependudukan-family-card');
+Route::get('/kependudukan/fams-list/update-kk', $controller_path . '\administrasi\KKController@update')->name('kependudukan-family-card');
 
 //birth-card
-Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\administrasi\BirthCard@index')->name('kependudukan-birth-card');
-Route::get('/kependudukan/birth-list/create-birth-card', $controller_path . '\administrasi\BirthCard@create')->name('kependudukan-birth-card');
-Route::get('/kependudukan/birth-list/update-birth-card', $controller_path . '\administrasi\BirthCard@update')->name('kependudukan-birth-card');
-Route::get('/kependudukan/birth-list/view-birth-card', $controller_path . '\administrasi\BirthCard@view')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/birth-card', $controller_path . '\administrasi\BirthController@index')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/create-birth-card', $controller_path . '\administrasi\BirthController@create')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/update-birth-card', $controller_path . '\administrasi\BirthController@update')->name('kependudukan-birth-card');
+Route::get('/kependudukan/birth-list/view-birth-card', $controller_path . '\administrasi\BirthController@view')->name('kependudukan-birth-card');
 
 //death-card
-Route::get('/kependudukan/death-list/death-card', $controller_path . '\administrasi\DeathCard@index')->name('kependudukan-death-card');
-Route::get('/kependudukan/death-list/create-death-card', $controller_path . '\administrasi\DeathCard@create')->name('kependudukan-death-card');
-Route::get('/kependudukan/death-list/update-death-card', $controller_path . '\administrasi\DeathCard@update')->name('kependudukan-death-card');
-Route::get('/kependudukan/death-list/view-death-card', $controller_path . '\administrasi\DeathCard@view')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/death-card', $controller_path . '\administrasi\DeathController@index')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/create-death-card', $controller_path . '\administrasi\DeathController@create')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/update-death-card', $controller_path . '\administrasi\DeathController@update')->name('kependudukan-death-card');
+Route::get('/kependudukan/death-list/view-death-card', $controller_path . '\administrasi\DeathController@view')->name('kependudukan-death-card');
 
 //marriage-card
-Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\administrasi\MarriageCard@index')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/create-marriage-card', $controller_path . '\administrasi\MarriageCard@create')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/update-marriage-card', $controller_path . '\administrasi\MarriageCard@update')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageCard@view')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\administrasi\MarriageController@index')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/create-marriage-card', $controller_path . '\administrasi\MarriageController@create')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/update-marriage-card', $controller_path . '\administrasi\MarriageController@update')->name('kependudukan-marriage-card');
+Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageController@view')->name('kependudukan-marriage-card');
 
 //pengaduan
 Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('info-complaints');
@@ -123,24 +104,23 @@ Route::get('/perizinan/bussiness/update-bussiness-licence', $controller_path . '
 Route::get('/perizinan/bussiness/view-bussiness-licence', $controller_path . '\permission\BussinessLicence@view')->name('izin-bisnis');
 
 //layanan
-Route::get('/pelayanan/education', $controller_path . '\layanan\Education@index')->name('pelayanan-education');
 Route::get('/pelayanan/tax-finance', $controller_path . '\layanan\TaxFinance@index')->name('pelayanan-tax-finance');
 
 //kks
-Route::get('/pelayanan/kks/kks-card', $controller_path . '\layanan\KKS@index')->name('pelayanan-kks-card');
-Route::get('/pelayanan/kks/create-kks-card', $controller_path . '\layanan\KKS@create')->name('pelayanan-kks-card');
-Route::get('/pelayanan/kks/update-kks-card', $controller_path . '\layanan\KKS@update')->name('pelayanan-kks-card');
-Route::get('/pelayanan/kks/view-kks-card', $controller_path . '\layanan\KKS@view')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/kks-card', $controller_path . '\layanan\KKSController@index')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/create-kks', $controller_path . '\layanan\KKSController@create')->name('pelayanan-kks-card');
+Route::get('/pelayanan/kks/update-kks', $controller_path . '\layanan\KKSController@update')->name('pelayanan-kks-card');
 
 //kis
-Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@index')->name('pelayanan-card-kis');
-Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@create')->name('pelayanan-card-kis');
-Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KIS@update')->name('pelayanan-card-kis');
+Route::get('/pelayanan/kis/kis-card', $controller_path . '\layanan\KISController@index')->name('pelayanan-card-kis');
+Route::get('/pelayanan/kis/create-kis', $controller_path . '\layanan\KISController@create')->name('pelayanan-card-kis');
+Route::get('/pelayanan/kis/update-kis', $controller_path . '\layanan\KISController@update')->name('pelayanan-card-kis');
 
 //kip
-Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@index')->name('pelayanan-card-kip');
-Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@create')->name('pelayanan-card-kip');
-Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIP@update')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIPController@index')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/create-kip', $controller_path . '\layanan\KIPController@create')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/update-kip', $controller_path . '\layanan\KIPController@update')->name('pelayanan-card-kip');
+Route::get('/pelayanan/kip/view-kip', $controller_path . '\layanan\KIPController@view')->name('pelayanan-card-kip');
 
 //statistik
 // Route::get('/pelayanan/education', $controller_path . '\pelayanan\education@index')->name('pelayanan-education');

@@ -48,7 +48,7 @@ class KTPController extends Controller
             'file_kk' => $filename
        ]);
 
-       return redirect()->route('ktp.index')->with('success-create','Berhasil Menambahkan Data');
+       return redirect()->route('kependudukan-ktp.index')->with('success-create','Berhasil Menambahkan Data');
     }
   
     public function edit($id)
@@ -88,7 +88,7 @@ class KTPController extends Controller
           'file_kk' => $newName
        ]);
 
-       return redirect()->route('ktp.index')->with('success-update','Berhasil Mengubah Data');
+       return redirect()->route('kependudukan-ktp.index')->with('success-update','Berhasil Mengubah Data');
 
     }
 

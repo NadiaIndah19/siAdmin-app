@@ -5,7 +5,7 @@ namespace App\Http\Controllers\administrasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class KKCard extends Controller
+class KKController extends Controller
 {
     public function index()
   {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\administrasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DeathCard extends Controller
+class DeathController extends Controller
 {
     public function index()
   {

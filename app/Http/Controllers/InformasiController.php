@@ -19,11 +19,12 @@ class InformasiController extends Controller
         $lainya = Informasi::where('jenis_berita','lainya')->get();
         $newsLast = Informasi::take(2)->latest()->get();
                 
-        return view('content.info.news',compact('teknologi','kesehatan','pendidikan','sosial','lainya','lainya','newsLast'));
+        return view('content.info.news',compact('teknologi','kesehatan','pendidikan','sosial','lainya','newsLast'));
     }
 
     public function store (Request $request)
     {
+        // $dd($request->all());   
         $file = $request->file('image');        
         $newName = '';
  

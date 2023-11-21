@@ -5,7 +5,7 @@ namespace App\Http\Controllers\administrasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MarriageCard extends Controller
+class MarriageController extends Controller
 {
     public function index()
   {

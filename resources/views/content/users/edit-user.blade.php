@@ -27,7 +27,7 @@
           <div class="mb-3">
             <label class="form-label" for="basic-default-email">Email</label>
             <div class="input-group input-group-merge">
-              <input type="text" name="email" id="basic-default-email" class="form-control" value="{{$user->nik}}" placeholder="user@gmail.com" aria-describedby="basic-default-email2" />
+              <input type="text" name="email" id="basic-default-email" class="form-control" value="{{$user->email}}" placeholder="user@gmail.com" aria-describedby="basic-default-email2" />
             </div>
           </div>
           <div class="mb-3">

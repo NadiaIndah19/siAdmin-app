@@ -31,7 +31,7 @@
         {
           "url": "/kependudukan/id-card/id-card-person",
           "name": "KTP (Kartu Tanda Penduduk)",
-          "slug": "kependudukan-id-card-person"
+          "slug": "kependudukan-ktp.index"
         },
         {
           "url": "/kependudukan/death-list/death-card",
@@ -85,19 +85,9 @@
       "slug": "pelayanan",
       "submenu": [
         {
-          "url": "/pelayanan/tax-finance",
-          "name": "Pembayaran Pajak",
-          "slug": "pelayanan-tax-finance"
-        },
-        {
           "url": "/pelayanan/kks/kks-card",
           "name": "KKS (Kartu Keluarga Sejahtera)",
           "slug": "pelayanan-kks-card"
-        },
-        {
-          "url": "/pelayanan/kis/kis-card",
-          "name": "KIS (Kartu Indonesia Sehat)",
-          "slug": "pelayanan-card-kis"
         },
         {
           "url": "/pelayanan/kip/kip-card",

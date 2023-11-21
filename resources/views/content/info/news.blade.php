@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pengaduan /</span> Berita</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Informasi /</span> Berita</h4>
 
 <!-- Content types -->
 <div class="row mb-5">
@@ -163,7 +163,7 @@
               <div class="card-body">
                 <h5 class="card-title">
                   {{$item->judul_berita}}
-              </h5>
+                </h5>
                 <p class="card-text">{{$item->kronologi}}</p>
                 <button onclick="destroy({{$item->id}})" class="btn btn-outline-danger">Hapus Berita</button>
               </div>
@@ -211,8 +211,6 @@
         </div>
         @endforeach
       </div>
-
-      
       {{-- @endforeach --}}
     </div>
   </div>

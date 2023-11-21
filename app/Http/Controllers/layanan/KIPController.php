@@ -5,25 +5,25 @@ namespace App\Http\Controllers\layanan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class KKS extends Controller
+class KIPController extends Controller
 {
     public function index()
   {
-    return view('content.pelayanan.kks.kks-card');
+    return view('content.pelayanan.kip.kip-card');
   }
-
+  
   public function create()
   {
-    return view('content.pelayanan.kks.create-kks-card');
+    return view('content.pelayanan.kip.create-kip');
   }
 
   public function update()
   {
-    return view('content.pelayanan.kks.update-kks-card');
+    return view('content.pelayanan.kip.update-kip');
   }
 
   public function view()
   {
-    return view('content.pelayanan.kks.view-kks-card');
+    return view('content.pelayanan.kip.view-kip');
   }
 }
