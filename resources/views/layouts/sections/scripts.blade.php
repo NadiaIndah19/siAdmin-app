@@ -22,7 +22,7 @@
 
 <script>
     @if (session('success-create'))
-     swal("Good job!", "Anda Berhasil Menambahkan Data !", "success");
+       swal("Good job!", "Anda Berhasil Menambahkan Data !", "success");
     @endif
 
     @if (session('success-update'))

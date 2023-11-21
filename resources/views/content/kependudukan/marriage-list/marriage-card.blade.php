@@ -33,6 +33,7 @@
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+<<<<<<< HEAD
               <tr>
                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
                 <td>Ryan Indrawan</td>
@@ -89,6 +90,25 @@
                   </div>
                 </td>
               </tr>
+=======
+              @php
+                  $no=1;
+              @endphp
+              @foreach ($pernikahan as $item)
+                <tr>
+                  <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $no++ }}</strong></td>
+                  <td>{{$item->nama_laki}}</td>
+                  <td>{{$item->nama_pr}}</td>
+                  <td>{{$item->nama_ayah_pr}}</td>
+                  <td>{{$item->tempat_lahir_pr}}</td>
+                  <td>{{\Carbon\Carbon::parse($item->created_at)->format('d-m-Y')}}</td>
+                  <td>
+                    <a href="{{route('pernikahan.edit', ['id'=>$item->id]) }}"  class="btn btn-info btn-sm mr-2"><i class='bx bx-message-square-edit text-white'></i></a>
+                    <button onclick="destroy({{$item->id}})"  class="btn btn-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
+                  </td>
+                </tr>
+              @endforeach                          
+>>>>>>> 3251cd169a61c9de4047472f00a356e959d3d892
             </tbody>
           </table>
         </div>
@@ -96,3 +116,42 @@
   </div>
 </div>
 @endsection
+
+@section('js')
+    <script>
+        function destroy(id) {          
+          swal({
+            title: "Are you sure?",            
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+              type: 'POST',
+              url: "{{ route('pernikahan.destroy') }}",
+              dataType: 'html',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  "id": id,
+                  "_token": "{{ csrf_token() }}"
+              },
+
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
+        }
+    </script>
+@endsection
+
+
