@@ -12,6 +12,7 @@ class AktaPernikahanController extends Controller
     public function index ()
     {
         $pernikahan = AktaPernikahan::get();
+        
         return view('content.kependudukan.marriage-list.marriage-card',compact('pernikahan'));
     }
 

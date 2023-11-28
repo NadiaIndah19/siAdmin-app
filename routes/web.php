@@ -27,8 +27,6 @@ Route::group(['middleware' => 'auth'],function () {
         Route::post('/edit-user', [UserController::class,'destroy'])->name('user-management.destroy');
     });
 
-    // ================================================================
-
     // =============== KTP =============================================
     Route::prefix('kependudukan')->group(function () {        
         Route::get('/id-card/id-card-person', [KTPController::class,'index'])->name('kependudukan-ktp.index');
@@ -38,34 +36,33 @@ Route::group(['middleware' => 'auth'],function () {
         Route::PUT('/id-card/{id}/edit-id-card', [KTPController::class,'update'])->name('ktp.update');
         Route::post('/id-card/create-id-card', [KTPController::class,'destroy'])->name('ktp.destroy');
     });
+
+    // =============== KK =============================================
+    Route::prefix('kependudukan')->group(function () {        
+        Route::get('/fams-list/family-card', [KKController::class,'index'])->name('kependudukan-kk.index');
+        Route::get('/fams-list/create-fams-list', [KKController::class,'create'])->name('kk.create');
+        Route::post('/fams-list/store-fams-list', [KKController::class,'store'])->name('kk.store');
+        Route::get('/fams-list/{id}/update-fams-list', [KKController::class,'edit'])->name('kk.edit');
+        Route::PUT('/fams-list/{id}/edit-fams-list', [KKController::class,'update'])->name('kk.update');
+        Route::post('/fams-list/create-fams-list', [KKController::class,'destroy'])->name('kk.destroy');
+    });
     
-
-    // ================================================================
-
     // =================== AKTA PERNIKAHAN =============================
     Route::prefix('/kependudukan/marriage-list/')->group(function () {
         Route::get('marriage-card', [AktaPernikahanController::class,'index'])->name('pernikahan.index');
         Route::get('create-marriage-card', [AktaPernikahanController::class,'create'])->name('pernikahan.create');
         Route::get('{id}/update-marriage-card', [AktaPernikahanController::class,'edit'])->name('pernikahan.edit');
-
         Route::post('create-marriage-card/store', [AktaPernikahanController::class,'store'])->name('pernikahan.store');
         Route::put('update-marriage-card/{id}/update', [AktaPernikahanController::class,'update'])->name('pernikahan.update');
-
         Route::post('create-marriage-card/destroy', [AktaPernikahanController::class,'destroy'])->name('pernikahan.destroy');
     });
    
-
-    // =================================================================
-
     // ==================== INFORMASI ==================================
     Route::prefix('info')->group(function () {
         Route::get('/news', [InformasiController::class,'index'])->name('informasi.index');
         Route::post('/news/store', [InformasiController::class,'store'])->name('informasi.store');
         Route::post('/news/delete', [InformasiController::class,'delete'])->name('informasi.destroy');
      });
-    
-
-    // =================================================================
 
 });
 
@@ -91,15 +88,11 @@ Route::get('/kependudukan/death-list/create-death-card', $controller_path . '\ad
 Route::get('/kependudukan/death-list/update-death-card', $controller_path . '\administrasi\DeathController@update')->name('kependudukan-death-card');
 Route::get('/kependudukan/death-list/view-death-card', $controller_path . '\administrasi\DeathController@view')->name('kependudukan-death-card');
 
-//marriage-card
-<<<<<<< HEAD
-Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\administrasi\MarriageController@index')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/create-marriage-card', $controller_path . '\administrasi\MarriageController@create')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/update-marriage-card', $controller_path . '\administrasi\MarriageController@update')->name('kependudukan-marriage-card');
-Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageController@view')->name('kependudukan-marriage-card');
-=======
-
->>>>>>> 3251cd169a61c9de4047472f00a356e959d3d892
+// //marriage-card
+// Route::get('/kependudukan/marriage-list/marriage-card', $controller_path . '\administrasi\MarriageController@index')->name('kependudukan-marriage-card');
+// Route::get('/kependudukan/marriage-list/create-marriage-card', $controller_path . '\administrasi\MarriageController@create')->name('kependudukan-marriage-card');
+// Route::get('/kependudukan/marriage-list/update-marriage-card', $controller_path . '\administrasi\MarriageController@update')->name('kependudukan-marriage-card');
+// Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageController@view')->name('kependudukan-marriage-card');
 
 //pengaduan
 Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('info-complaints');

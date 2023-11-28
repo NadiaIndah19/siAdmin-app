@@ -20,9 +20,11 @@
           <th>ID</th>
           <th>Nomor KK</th>
           <th>Nama Kepala Keluarga</th>
-          <th>Alamat</th>
-          <th>Tgl Daftar KK</th>
-          <th>Status</th>
+          <th>TTL</th>
+          <th>Jenis Kelamin</th>
+          <th>Agama</th>
+          <th>Pendidikan</th>
+          <th>Jenis Pekerjaan</th>
           <th>Actions</th>
         </tr>
       </thead>
