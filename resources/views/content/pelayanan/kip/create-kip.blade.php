@@ -18,43 +18,65 @@
       <h5 class="card-header">Create KIP</h5>
       <hr class="my-0">
       <div class="card-body">
-        <form id="formAccountSettings" method="POST" onsubmit="return false">
+        <form action="{{ route('kip.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="row">
             <div class="mb-3 col-md-6">
               <label for="name" class="form-label">Nama Lengkap</label>
-              <input class="form-control" type="text" id="name" name="name" value="" autofocus />
+              <input class="form-control" type="text" id="name" name="nama" value="" />
             </div>
             <div class="mb-3 col-md-6">
               <label for="NISN" class="form-label">NISN</label>
-              <input class="form-control" type="text" id="NISN" name="NISN" value="" autofocus />
+              <input class="form-control" type="text" id="NISN" name="nisn" value="" />
             </div>
             <div class="mb-3 col-md-6">
-              <label for="ttl" class="form-label">TTL</label>
-              <input type="text" class="form-control" id="ttl" name="ttl"/>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="ttl" class="form-label">Tempat Lahir</label>
+                  <input type="text" class="form-control" id="ttl" name="tempat_lahir"/>
+                </div>
+                <div class="col-md-6">
+                  <label for="ttl" class="form-label">Tanggal Lahir</label>
+                  <input type="date" class="form-control" id="ttl" name="tanggal_lahir"/>
+                </div>
+              </div>
+             
             </div>
             <div class="mb-3 col-md-6">
               <label for="address" class="form-label">Alamat</label>
-              <input type="text" class="form-control" id="address" name="address"/>
+              <input type="text" class="form-control" id="address" name="alamat"/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="school" class="form-label">Asal Sekolah</label>
-              <input type="text" class="form-control" id="school" name="school"/>
+              <input type="text" class="form-control" id="school" name="asal_sekolah"/>
             </div>
             <div class="col-md-6 mb-3">
               <label for="pengantar" class="form-label">File Surat Pengantar RT/RW</label>
-              <input class="form-control" type="file" id="pengantar">
+              <input class="form-control" type="file" name="file_pengantar_rt" id="pengantar" >
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fileKTP" class="form-label">File KKS</label>
+              <input class="form-control" type="file" name="file_kks" id="fileKTP">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fileKTP" class="form-label">File Rapor</label>
+              <input class="form-control" type="file" name="file_rapor" id="fileKTP">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fileKTP" class="form-label">File Penerima BSM</label>
+              <input class="form-control" type="file" name="file_penerima_bsm" id="fileKTP">
             </div>
             <div class="col-md-6 mb-3">
               <label for="fileKTP" class="form-label">File KTP</label>
-              <input class="form-control" type="file" id="fileKTP">
+              <input class="form-control" type="file" name="file_ktp" id="fileKTP">
             </div>
             <div class="col-md-6 mb-3">
               <label for="fileKK" class="form-label">File KK</label>
-              <input class="form-control" type="file" id="fileKK">
+              <input class="form-control" type="file" name="file_kk" id="fileKK">
             </div>
             <div class="col-md-6 mb-3">
               <label for="fileAKTA" class="form-label">File AKTA</label>
-              <input class="form-control" type="file" id="fileAKTA">
+              <input class="form-control" type="file" name="file_akta" id="fileAKTA">
             </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">Save changes</button>

@@ -3,7 +3,9 @@
 use App\Http\Controllers\AktaPernikahanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\KIPController;
 use App\Http\Controllers\KTPController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +66,38 @@ Route::group(['middleware' => 'auth'],function () {
         Route::post('/news/delete', [InformasiController::class,'delete'])->name('informasi.destroy');
      });
 
+    //  ===================================== PENGADUAN ============================================================
+    Route::prefix('pengaduan/complaints')->group(function () {
+        Route::get('/', [PengaduanController::class,'index'])->name('pengaduan.index');
+        Route::get('/create', [PengaduanController::class,'create'])->name('pengaduan.create');
+        Route::get('{id}/edit', [PengaduanController::class,'edit'])->name('pengaduan.edit');
+
+        Route::post('/store', [PengaduanController::class,'store'])->name('pengaduan.store');
+        Route::post('{id}/update', [PengaduanController::class,'update'])->name('pengaduan.update');
+        Route::post('destroy', [PengaduanController::class,'destroy'])->name('pengaduan.destroy');
+    });    
+
+
+    // ======================================= KIP ==================================================================
+
+    // Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIPController@index')->name('pelayanan-card-kip');
+    Route::prefix('pelayanan/kip/kip-card')->group(function () {
+        Route::get('/', [KIPController::class,'index'])->name('kip.index');
+        Route::get('/create', [KIPController::class,'create'])->name('kip.create');
+        Route::get('{id}/edit', [KIPController::class,'edit'])->name('kip.edit');
+
+        Route::post('/store', [KIPController::class,'store'])->name('kip.store');
+        Route::put('{id}/update', [KIPController::class,'update'])->name('kip.update');
+        Route::post('destroy', [KIPController::class,'destroy'])->name('kip.destroy');
+    });    
+
+    
+    // ========================================= AKTA KELAHIRAN =====================================================
+
+    // ========================================= AKTA KEMATIAN ======================================================
+
+    
+
 });
 
 // ========================================== DEFAULT TEMPLATE ROUTE ======================================================
@@ -95,9 +129,9 @@ Route::get('/kependudukan/death-list/view-death-card', $controller_path . '\admi
 // Route::get('/kependudukan/marriage-list/view-marriage-card', $controller_path . '\administrasi\MarriageController@view')->name('kependudukan-marriage-card');
 
 //pengaduan
-Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('info-complaints');
-Route::get('/pengaduan/create-complaints', $controller_path . '\complaint_news\ComplaintsController@create')->name('info-complaints');
-Route::get('/pengaduan/update-complaints', $controller_path . '\complaint_news\ComplaintsController@update')->name('info-complaints');
+// Route::get('/pengaduan/complaints', $controller_path . '\complaint_news\ComplaintsController@index')->name('info-complaints');
+// Route::get('/pengaduan/create-complaints', $controller_path . '\complaint_news\ComplaintsController@create')->name('info-complaints');
+// Route::get('/pengaduan/update-complaints', $controller_path . '\complaint_news\ComplaintsController@update')->name('info-complaints');
 
 //info
 // Route::get('/info/news', $controller_path . '\complaint_news\NewsController@index')->name('info-news');
@@ -127,10 +161,10 @@ Route::get('/pelayanan/kis/create-kis', $controller_path . '\layanan\KISControll
 Route::get('/pelayanan/kis/update-kis', $controller_path . '\layanan\KISController@update')->name('pelayanan-card-kis');
 
 //kip
-Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIPController@index')->name('pelayanan-card-kip');
-Route::get('/pelayanan/kip/create-kip', $controller_path . '\layanan\KIPController@create')->name('pelayanan-card-kip');
-Route::get('/pelayanan/kip/update-kip', $controller_path . '\layanan\KIPController@update')->name('pelayanan-card-kip');
-Route::get('/pelayanan/kip/view-kip', $controller_path . '\layanan\KIPController@view')->name('pelayanan-card-kip');
+// Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIPController@index')->name('pelayanan-card-kip');
+// Route::get('/pelayanan/kip/create-kip', $controller_path . '\layanan\KIPController@create')->name('pelayanan-card-kip');
+// Route::get('/pelayanan/kip/update-kip', $controller_path . '\layanan\KIPController@update')->name('pelayanan-card-kip');
+// Route::get('/pelayanan/kip/view-kip', $controller_path . '\layanan\KIPController@view')->name('pelayanan-card-kip');
 
 //statistik
 // Route::get('/pelayanan/education', $controller_path . '\pelayanan\education@index')->name('pelayanan-education');
