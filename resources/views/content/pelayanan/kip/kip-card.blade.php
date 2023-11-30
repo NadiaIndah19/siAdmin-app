@@ -3,70 +3,297 @@
 @section('title')
 
 @section('content')
-<h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">Pelayanan / </span> Kartu Indonesia Pintar
-</h4>
+    <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Pelayanan / </span> Kartu Indonesia Pintar
+    </h4>
 
-<div class="row">
-  <div class="col-md-12">
-    <ul class="nav nav-pills flex-column flex-md-row mb-3">
-      <li class="nav-item"><a class="nav-link" href="{{url('pelayanan/kks/kks-card')}}"><i class="bx bx-user me-1"></i> KKS</a></li>
-      {{-- <li class="nav-item"><a class="nav-link" href="{{url('pelayanan/kis/kis-card')}}"><i class="bx bx-bell me-1"></i> KIS</a></li> --}}
-      <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-link-alt me-1"></i> KIP</a></li>
-    </ul>
-    <div class="card">
-      <div class="card-header d-flex align-items-center justify-content-between">
-        <h5>Daftar Kartu Indonesia Pintar</h5>
-        <a href="{{ url('pelayanan/kip/create-kip') }}" type="button" class="btn btn-outline-primary">+&nbsp; Tambah Data</a>
-      </div>
-      <div class="table-responsive text-nowrap">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nama Lengkap</th>
-              <th>Tempat Tanggal Lahir</th>
-              <th>Alamat</th>
-              <th>Asal Sekolah</th>
-              <th>File KK</th>
-              <th>File AKTA</th>
-              <th>File KKS</th>
-              <th>File Rapor</th>
-              <th>File Surat Penerima BSM</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody class="table-border-bottom-0">
-            <tr>
-              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-              <td>Albert Cook</td>
-              <td>Tuban, 19 Maret 2001</td>
-              <td>Kutorejo No23 RT 02 RW 01</td>
-              <td>SMA N 1 TUBAN</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <a href="" class="btn btn-outline-success btn-sm btn-rounded"><i class='bx bx-show'></i></a>
-                <a href="" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
-                <button onclick="destroy({{}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
-              </td>
-              {{-- <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ url('pelayanan/kip/view-kip') }}"><i class="bx bx-edit-alt me-1"></i> View</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                <li class="nav-item"><a class="nav-link" href="{{ url('pelayanan/kks/kks-card') }}"><i
+                            class="bx bx-user me-1"></i> KKS</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="{{url('pelayanan/kis/kis-card')}}"><i class="bx bx-bell me-1"></i> KIS</a></li> --}}
+                <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i
+                            class="bx bx-link-alt me-1"></i> KIP</a></li>
+            </ul>
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5>Daftar Kartu Indonesia Pintar</h5>
+                    <a href="{{ route('kip.create') }}" type="button" class="btn btn-outline-primary">+&nbsp; Tambah
+                        Data</a>
                 </div>
-              </td> --}}
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>Nama Lengkap</th>
+                                <th>Tempat Tanggal Lahir</th>
+                                <th>Alamat</th>
+                                <th>Asal Sekolah</th>
+                                <th>File KK</th>
+                                <th>File AKTA</th>
+                                <th>File KTP</th>
+                                <th>File Surat RT</th>
+                                <th>File Rapor</th>
+                                <th>File KKS</th>
+                                <th>File Penerima BSM</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <?php
+                            $no = 1;
+                            ?>
+                            @foreach ($kip as $item)
+                                <tr>
+                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                                        <strong>{{ $no++ }}</strong>
+                                    </td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->tempat_lahir . ',' . \Carbon\Carbon::parse($item->tanggal_lahir)->format('d-F-Y') }}
+                                    </td>
+                                    <td>{{ $item->alamat }}</td>
+                                    <td>{{ $item->asal_sekolah }}</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#kk{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#akta{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#ktp{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#rt{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#rapor{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#kks{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#bsm{{ $item->id }}"> <i
+                                                class='bx bx-image-alt text-primary'></i>Cek File</button>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('kip.edit', ['id' => $item->id]) }}"
+                                            class="btn btn-outline-info btn-sm btn-rounded"><i
+                                                class='bx bx-message-square-edit'></i></a>
+                                        <button onclick="destroy({{ $item->id }})"
+                                            class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
+                                    </td>
+                                </tr>
+
+
+
+                                {{-- ================== MODAL KK ======================================= --}}
+                                <div class="modal fade" id="kk{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File KK</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_kk) }}" width="100%"
+                                                    height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- ================== MODAL Akta ======================================= --}}
+                                <div class="modal fade" id="akta{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File Akta</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_akta) }}" width="100%"
+                                                    height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- ================== MODAL KK ======================================= --}}
+                                <div class="modal fade" id="ktp{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File KTP</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_ktp) }}" width="100%"
+                                                    height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- ================== MODAL KK ======================================= --}}
+                                <div class="modal fade" id="rt{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File Pengatar RT</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_pengantar_rt) }}"
+                                                    width="100%" height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="rapor{{ $item->id }}" tabindex="-1"
+                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">File Rapor</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                  aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              <iframe src="{{ asset('storage/' . $item->file_rapor) }}"
+                                                  width="100%" height="400px"></iframe>
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-primary"
+                                                  data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="modal fade" id="kks{{ $item->id }}" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">File KKS</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <iframe src="{{ asset('storage/' . $item->file_kks) }}"
+                                                width="100%" height="400px"></iframe>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="bsm{{ $item->id }}" tabindex="-1"
+                              aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">File Penerima BSM</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                              aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <iframe src="{{ asset('storage/' . $item->file_penerima_bsm) }}"
+                                              width="100%" height="400px"></iframe>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-primary"
+                                              data-bs-dismiss="modal">Close</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+@endsection
+
+@section('js')
+    <script>
+        function destroy(id) {
+            swal({
+                    title: "Are you sure?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "{{ route('kip.destroy') }}",
+                            dataType: 'html',
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            data: {
+                                "id": id,
+                                "_token": "{{ csrf_token() }}"
+                            },
+
+                            success: function(data) {
+                                swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                                location.reload();
+                            },
+                            error: function(data) {
+                                console.log(data);
+                            }
+                        });
+                    }
+                });
+        }
+    </script>
 @endsection

@@ -35,21 +35,6 @@
               <th>TTL Alm</th>
               <th>Jenis Kelamin</th>
               <th>Actions</th>
-              {{-- <th>Agama</th>
-              <th>Status Perkawinan</th>
-              <th>Pekerjaan</th>
-              <th>Kewarganegaraan</th>
-              <th>Tgl Meninggal</th>
-              <th>Tempat Meninggal</th>
-              <th>Penyebab Kematian</th>
-              <th>Penentu</th>
-              <th>Alamat</th>
-              <th>Catatan</th>
-              <th>File Pernyataan</th>
-              <th>File KTP</th>
-              <th>File KK</th>
-              <th>File TTD</th>
-              <th>Tgl Pembuatan</th>--}}
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -66,15 +51,6 @@
                 <a href="" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
                 <button onclick=""  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
               </td>
-              {{-- <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ url('kependudukan/death-list/view-death-card') }}"><i class="bx bx-edit-alt me-1"></i> View</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                  </div>
-                </div>
-              </td> --}}
             </tr>
           </tbody>
         </table>

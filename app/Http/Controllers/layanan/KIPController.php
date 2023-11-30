@@ -4,6 +4,7 @@ namespace App\Http\Controllers\layanan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KIPController extends Controller
 {
@@ -26,4 +27,7 @@ class KIPController extends Controller
   {
     return view('content.pelayanan.kip.view-kip');
   }
+
+
+  
 }
