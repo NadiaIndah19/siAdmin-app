@@ -104,7 +104,7 @@
             <div class="col-md-4 mb-3">
               <label class="form-label" for="basic-icon-default-work">Status Perkawinan</label>
               <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-briefcase"></i></span>
+                <span class="input-group-text"></span>
                 <select name="status_perkawinan" class="form-control" id="" required>
                   <option value="Belum Menikah">Belum Menikah</option>
                   <option value="Sudah Menikah">Sudah Menikah</option>                               

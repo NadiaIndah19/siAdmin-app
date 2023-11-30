@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'],function () {
 
     // =============== KK =============================================
     Route::prefix('kependudukan')->group(function () {        
-        Route::get('/fams-list/family-card', [KKController::class,'index'])->name('kependudukan-kk.index');
+        Route::get('/fams-list/kk-card', [KKController::class,'index'])->name('kependudukan-kk.index');
         Route::get('/fams-list/create-fams-list', [KKController::class,'create'])->name('kk.create');
         Route::post('/fams-list/store-fams-list', [KKController::class,'store'])->name('kk.store');
         Route::get('/fams-list/{id}/update-fams-list', [KKController::class,'edit'])->name('kk.edit');
@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'],function () {
         Route::get('marriage-card', [AktaPernikahanController::class,'index'])->name('pernikahan.index');
         Route::get('create-marriage-card', [AktaPernikahanController::class,'create'])->name('pernikahan.create');
         Route::get('{id}/update-marriage-card', [AktaPernikahanController::class,'edit'])->name('pernikahan.edit');
+        Route::get('{id}/view-marriage-card', [AktaPernikahanController::class,'view'])->name('pernikahan.view');
         Route::post('create-marriage-card/store', [AktaPernikahanController::class,'store'])->name('pernikahan.store');
         Route::put('update-marriage-card/{id}/update', [AktaPernikahanController::class,'update'])->name('pernikahan.update');
         Route::post('create-marriage-card/destroy', [AktaPernikahanController::class,'destroy'])->name('pernikahan.destroy');

@@ -24,9 +24,11 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>Tempat Lahir</th>
-                <th>Tanggal Lahir</th>
+                <th>Nama Kepala Keluarga</th>
+                <th>Nomor KK</th>
+                <th>Nama Lengkap Anak</th>
+                <th>Tempat Kelahiran</th>
+                <th>Hari & Tanggal Lahir</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -34,6 +36,8 @@
               <tr>
                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
                 <td>Albert Cook</td>
+                <td>12345668944323456</td>
+                <td>Nina Boldis</td>
                 <td>Surakarta</td>
                 <td>12-08-2022</td>
                 <td>
@@ -44,32 +48,6 @@
                       <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-                <td>Albert Cook</td>
-                <td>Surakarta</td>
-                <td>12-08-2022</td>
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="{{ url('kependudukan/birth-list/view-birth-card') }}"><i class="bx bx-edit-alt me-1"></i> View</a>
-                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-                <td>Albert Cook</td>
-                <td>Surakarta</td>
-                <td>12-08-2022</td>
-                <td>
-                  <a href="" class="btn btn-outline-success btn-sm btn-rounded"><i class='bx bx-show'></i></a>
-                  <a href="" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
-                  <button onclick="destroy({{}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
                 </td>
               </tr>
             </tbody>

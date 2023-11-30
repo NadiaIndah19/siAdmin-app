@@ -11,17 +11,21 @@
   <div class="col-md-12">
     <ul class="nav nav-pills flex-column flex-md-row mb-3">
       <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i>Tambah Data</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/marriage-list/marriage-card')}}"><i class="bx bx-bell me-1"></i>View Data</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/marriage-list/view-marriage-card')}}"><i class="bx bx-bell me-1"></i>View Data</a></li>
       <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/marriage-list/update-marriage-card')}}"><i class="bx bx-link-alt me-1"></i>Update Data</a></li>
     </ul>
     <div class="col-xl-12">
       <div class="nav-align-top mb-4">
         <ul class="nav nav-tabs nav-fill" role="tablist">
           <li class="nav-item">
-            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-home" aria-controls="navs-justified-home" aria-selected="true"><i class="tf-icons bx bx-male"></i> Pihak Mempelai Pria</button>
+            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" 
+            data-bs-target="#navs-justified-home" aria-controls="navs-justified-home" aria-selected="true">
+            <i class="tf-icons bx bx-male"></i> Pihak Mempelai Pria</button>
           </li>
           <li class="nav-item">
-            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" aria-selected="false"><i class="tf-icons bx bx-female"></i> Pihak Mempelai Wanita</button>
+            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" 
+            data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" 
+            aria-selected="false"><i class="tf-icons bx bx-female"></i> Pihak Mempelai Wanita</button>
           </li>
           {{-- <li class="nav-item">
             <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-messages" aria-controls="navs-justified-messages" aria-selected="false"><i class="tf-icons bx bx-file"></i> Upload Files</button>
@@ -29,8 +33,8 @@
         </ul>
         <form action="{{ route('pernikahan.store') }}" method="POST" enctype="multipart/form-data">
           @csrf  
-        <div class="tab-content">
-                  
+        <div class="card ">
+          <div class="tab-content">
             <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
               <div class="row">
                 <div class="mb-3 col-md-6">
@@ -43,7 +47,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="tptbirth" class="form-label">Tempat Lahir</label>
-                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_laki" maxlength="6"/>
+                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_laki" />
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
@@ -53,11 +57,11 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="nameAyah" class="form-label">Nama Ayah</label>
-                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_laki"maxlength="6" />
+                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_laki" />
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="nameIbu" class="form-label">Nama Ibu</label>
-                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_laki"maxlength="6"/>
+                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_laki"/>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="address" class="form-label">Alamat</label>
@@ -108,7 +112,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="tptbirth" class="form-label">Tempat Lahir</label>
-                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_pr" maxlength="6"/>
+                  <input type="text" class="form-control" id="tptbirth" name="tempat_lahir_pr"/>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="basic-icon-default-tglbirth" class="form-label">Tanggal Lahir</label>
@@ -118,11 +122,11 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="nameAyah" class="form-label">Nama Ayah</label>
-                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_pr"maxlength="6" />
+                  <input type="text" class="form-control" id="nameAyah" name="nama_ayah_pr"/>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="nameIbu" class="form-label">Nama Ibu</label>
-                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_pr"maxlength="6"/>
+                  <input type="text" class="form-control" id="nameIbu" name="nama_ibu_pr"/>
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="nameSaksi" class="form-label">Nama Saksi</label>
@@ -170,47 +174,7 @@
                 </div>
               </div>
             </div>
-        
-          {{-- <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="filepengantar" class="form-label">Surat Pengantar Desa</label>
-                <input class="form-control" type="file" id="filepengantar" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTP" class="form-label">File KTP</label>
-                <input class="form-control" type="file" id="fileKTP" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileAKTAKelahiran" class="form-label">File AKTA Kelahiran</label>
-                <input class="form-control" type="file" id="fileAKTAKelahiran" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKK" class="form-label">File KK</label>
-                <input class="form-control" type="file" id="fileKK" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTPortu" class="form-label">File KTP Orang Tua</label>
-                <input class="form-control" type="file" id="fileKTPortu" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filesuratNikah" class="form-label">File Surat Nikah Ortu</label>
-                <input class="form-control" type="file" id="filesuratNikah" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="fileKTPSaksi" class="form-label">File KTP Saksi</label>
-                <input class="form-control" type="file" id="fileKTPSaksi" multiple>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="filefoto" class="form-label">File Foto</label>
-                <input class="form-control" type="file" id="filefoto" multiple>
-              </div>
-              <div class="mt-2">
-                <button type="submit" class="btn btn-primary me-2">Save changes</button>
-                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
-              </div>
-            </div>
-          </div> --}}
+          </div>
         </div>
       </form>
       </div>
@@ -416,7 +380,7 @@
             </div>
             <div class="mb-3 col-md-6">
               <label for="tptbirth" class="form-label">Tempat Lahir</label>
-              <input type="text" class="form-control" id="tptbirth" name="tptbirth" maxlength="6"/>
+              <input type="text" class="form-control" id="tptbirth" name="tptbirth"/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="tglbirth" class="form-label">Tanggal Lahir</label> 

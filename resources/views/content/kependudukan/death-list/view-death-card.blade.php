@@ -33,12 +33,16 @@
               <input class="form-control" type="text" id="NIKAlm" name="NIKAlm" value="31212812690002" disabled/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="name" class="form-label">Nama</label>
+              <label for="name" class="form-label">Nama Lengkap Alm</label>
               <input class="form-control" type="text" id="name" name="name" value="Wahyuni" autofocus disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="ttlAlm" class="form-label">TTL Alm</label>
-              <input type="text" class="form-control" id="ttlAlm" name="ttlAlm" value="{{config('variables.creatorName')}}" disabled/>
+              <input type="text" class="form-control" id="ttlAlm" name="ttlAlm" value="Sidoarjo, 11 Maret 1889" disabled/>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="gender" class="form-label">Jenis Kelamin</label>
+              <input type="text" class="form-control" id="gender" name="gender" value="Islam" disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="religion" class="form-label">Agama</label>
@@ -68,20 +72,16 @@
               <label for="penyebabkematian" class="form-label">Penyebab Kematian</label>
               <input type="text" class="form-control" id="penyebabkematian" name="penyebabkematian" value="Sakit Jantung" disabled/>
             </div>
-            {{-- <div class="mb-3 col-md-6">
-              <label for="Penentu" class="form-label">Penentu</label>
-              <input class="form-control" type="text" id="Penentu" name="Penentu"/>
-            </div> --}}
               <div class="mb-3 col-md-6">
                 <label for="address" class="form-label">Alamat</label>
                 <input type="text" class="form-control" id="address" name="address" value="Beringharjo No 31A" disabled/>
               </div>
-              <div class="mb-3 col-md-6">
+              <div class="mb-3">
                 <label for="notes" class="form-label">Catatan</label>
                 <input type="text" class="form-control" id="notes" name="notes"maxlength="6" value="-" disabled/>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="filePernyataan" class="form-label">File Pernyataan</label>
+                <label for="filePernyataan" class="form-label">File Pernyataan Kematian</label>
                 <input class="form-control" type="file" id="filePernyataan">
               </div>
               <div class="col-md-6 mb-3">
@@ -96,114 +96,18 @@
                 <label for="fileTTD" class="form-label">File TTD</label>
                 <input class="form-control" type="file" id="fileTTD">
               </div>
+              <div class="col-md-6 mb-3">
+                <label for="fileaktakel" class="form-label">File Akta Kelahiran</label>
+                <input class="form-control" type="file" id="fileaktakel">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="filebukunikah" class="form-label">File Buku Nikah</label>
+                <input class="form-control" type="file" id="filebukunikah">
+              </div>
             </div>
           </div>
         </form>
       </div>
-      {{-- <div class="table-responsive">
-        <table class="table table-striped table-borderless border-bottom">
-          <thead>
-            <tr>
-              <th class="text-nowrap">Type</th>
-              <th class="text-nowrap text-center">✉️ Email</th>
-              <th class="text-nowrap text-center">🖥 Browser</th>
-              <th class="text-nowrap text-center">👩🏻‍💻 App</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="text-nowrap">New for you</td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck1" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck2" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck3" checked />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-nowrap">Account activity</td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck4" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck5" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck6" checked />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-nowrap">A new browser used to sign in</td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck7" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck8" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck9" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-nowrap">A new device is linked</td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck10" checked />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck11" />
-                </div>
-              </td>
-              <td>
-                <div class="form-check d-flex justify-content-center">
-                  <input class="form-check-input" type="checkbox" id="defaultCheck12" />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card-body">
-        <h6>When should we send you notifications?</h6>
-        <form action="javascript:void(0);">
-          <div class="row">
-            <div class="col-sm-6">
-              <select id="sendNotification" class="form-select" name="sendNotification">
-                <option selected>Only when I'm online</option>
-                <option>Anytime</option>
-              </select>
-            </div>
-            <div class="mt-4">
-              <button type="submit" class="btn btn-primary me-2">Save changes</button>
-              <button type="reset" class="btn btn-outline-secondary">Discard</button>
-            </div>
-          </div>
-        </form>
-      </div> --}}
-      <!-- /Notifications -->
     </div>
   </div>
 </div>

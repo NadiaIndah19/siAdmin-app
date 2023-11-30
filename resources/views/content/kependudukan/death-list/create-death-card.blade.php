@@ -14,7 +14,7 @@
   <div class="col-md-12">
     <ul class="nav nav-pills flex-column flex-md-row mb-3">
       <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i>Tambah Data</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/death-list/death-card')}}"><i class="bx bx-bell me-1"></i>View Data</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/death-list/view-death-card')}}"><i class="bx bx-bell me-1"></i>View Data</a></li>
       <li class="nav-item"><a class="nav-link" href="{{url('kependudukan/death-list/update-death-card')}}"><i class="bx bx-link-alt me-1"></i>Update Data</a></li>
     </ul>
     <div class="card mb-4">
@@ -64,12 +64,12 @@
               <input class="form-control" type="text" id="NIKAlm" name="NIKAlm" value=""/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="name" class="form-label">Nama</label>
+              <label for="name" class="form-label">Nama Lengkap Alm</label>
               <input class="form-control" type="text" id="name" name="name" value="" autofocus />
             </div>
             <div class="mb-3 col-md-6">
               <label for="ttlAlm" class="form-label">TTL Alm</label>
-              <input type="text" class="form-control" id="ttlAlm" name="ttlAlm" value="{{config('variables.creatorName')}}" />
+              <input type="text" class="form-control" id="ttlAlm" name="ttlAlm" value="" />
             </div>
             <div class="mb-3 col-md-6">
               <label for="religion" class="form-label">Agama</label>
@@ -115,33 +115,37 @@
               <label for="penyebabkematian" class="form-label">Penyebab Kematian</label>
               <input type="text" class="form-control" id="penyebabkematian" name="penyebabkematian"/>
             </div>
-            {{-- <div class="mb-3 col-md-6">
-              <label for="Penentu" class="form-label">Penentu</label>
-              <input class="form-control" type="text" id="Penentu" name="Penentu"/>
-            </div> --}}
               <div class="mb-3 col-md-6">
                 <label for="address" class="form-label">Alamat</label>
                 <input type="text" class="form-control" id="address" name="address"/>
               </div>
-              <div class="mb-3 col-md-6">
+              <div class="mb-3">
                 <label for="notes" class="form-label">Catatan</label>
                 <input type="text" class="form-control" id="notes" name="notes"maxlength="6" />
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="filePernyataan" class="form-label">File Pernyataan</label>
+              <div class="col-md-4 mb-3">
+                <label for="filePernyataan" class="form-label">File Pernyataan Kematian</label>
                 <input class="form-control" type="file" id="filePernyataan">
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="fileKTP" class="form-label">File KTP</label>
                 <input class="form-control" type="file" id="fileKTP">
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="fileKK" class="form-label">File KK</label>
                 <input class="form-control" type="file" id="fileKK">
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="fileTTD" class="form-label">File TTD</label>
                 <input class="form-control" type="file" id="fileTTD">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="fileaktakel" class="form-label">File Akta Kelahiran</label>
+                <input class="form-control" type="file" id="fileaktakel">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="filebukunikah" class="form-label">File Buku Nikah</label>
+                <input class="form-control" type="file" id="filebukunikah">
               </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">Save changes</button>
@@ -152,7 +156,7 @@
       </div>
       <!-- /Account -->
     </div>
-    <div class="card">
+    {{-- <div class="card">
       <h5 class="card-header">Delete Account</h5>
       <div class="card-body">
         <div class="mb-3 col-12 mb-0">
@@ -169,7 +173,7 @@
           <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
         </form>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 @endsection

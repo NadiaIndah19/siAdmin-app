@@ -26,7 +26,7 @@
         {
           "url": "/kependudukan/fams-list/family-card",
           "name": "KK (Kartu Keluarga)",
-          "slug": "kependudukan-family-card"
+          "slug": "kependudukan-kk-card"
         },
         {
           "url": "/kependudukan/id-card/id-card-person",
