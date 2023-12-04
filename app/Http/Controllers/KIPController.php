@@ -89,9 +89,10 @@ class KIPController extends Controller
         return redirect()->route('kip.index')->with('success-update','Data Berhasil Diubah ');
     }
 
-    public function view()
+    public function view($id)
     {
-        return view('content.pelayanan.kip.view-kip');
+        $kip = KIP::where('id',$id)->first();
+        return view('content.pelayanan.kip.view-kip',compact('kip'));
     }
 
     public function saveFile ($file,$location)

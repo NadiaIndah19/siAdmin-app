@@ -35,6 +35,8 @@ return new class extends Migration
             $table->string('file_ktp');
             $table->string('file_kk');
             $table->string('file_ttd');
+            $table->string('file_akta_kelahiran');
+            $table->string('file_buku_nikah');
             $table->timestamps();
         });
     }

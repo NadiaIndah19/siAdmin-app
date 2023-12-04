@@ -91,6 +91,8 @@
                                                 class='bx bx-image-alt text-primary'></i>Cek File</button>
                                     </td>
                                     <td>
+                                        <a href="{{ route('kip.view', ['id' => $item->id]) }}"
+                                            class="btn btn-outline-info btn-sm"><i class='bx bx-show'></i></a>
                                         <a href="{{ route('kip.edit', ['id' => $item->id]) }}"
                                             class="btn btn-outline-info btn-sm btn-rounded"><i
                                                 class='bx bx-message-square-edit'></i></a>
@@ -190,67 +192,67 @@
                                 </div>
 
                                 <div class="modal fade" id="rapor{{ $item->id }}" tabindex="-1"
-                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-lg">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLabel">File Rapor</h5>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                  aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                              <iframe src="{{ asset('storage/' . $item->file_rapor) }}"
-                                                  width="100%" height="400px"></iframe>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button type="button" class="btn btn-primary"
-                                                  data-bs-dismiss="modal">Close</button>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <div class="modal fade" id="kks{{ $item->id }}" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">File KKS</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <iframe src="{{ asset('storage/' . $item->file_kks) }}"
-                                                width="100%" height="400px"></iframe>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary"
-                                                data-bs-dismiss="modal">Close</button>
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File Rapor</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_rapor) }}" width="100%"
+                                                    height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="modal fade" id="bsm{{ $item->id }}" tabindex="-1"
-                              aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-lg">
-                                  <div class="modal-content">
-                                      <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">File Penerima BSM</h5>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                              aria-label="Close"></button>
-                                      </div>
-                                      <div class="modal-body">
-                                          <iframe src="{{ asset('storage/' . $item->file_penerima_bsm) }}"
-                                              width="100%" height="400px"></iframe>
-                                      </div>
-                                      <div class="modal-footer">
-                                          <button type="button" class="btn btn-primary"
-                                              data-bs-dismiss="modal">Close</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                                <div class="modal fade" id="kks{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File KKS</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_kks) }}" width="100%"
+                                                    height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="bsm{{ $item->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">File Penerima BSM</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="{{ asset('storage/' . $item->file_penerima_bsm) }}"
+                                                    width="100%" height="400px"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
 
                         </tbody>

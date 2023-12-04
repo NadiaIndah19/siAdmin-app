@@ -21,13 +21,16 @@ class AktaKematian extends Model
         'jenis_kelamin',
         'pekerjaan',
         'kewarganegaraan',
-        'tanggal_meininggal',
+        'tanggal_meninggal',
         'penyebab_kematian',
+        'tempat_meninggal',
         'alamat',
-        'catatan',
+        'catatan',  
         'file_pernyataan',
         'file_ktp',
         'file_kk',
         'file_ttd',
+        'file_akta_kelahiran',
+        'file_buku_nikah'
     ];
 }

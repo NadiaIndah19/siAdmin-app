@@ -47,6 +47,8 @@
           <td>{{$item->status_perkawinan}}</td>
           <td>{{$item->pekerjaan}}</td>
           <td>
+            <a href="{{ route('ktp.view', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm"><i
+              class='bx bx-show'></i></a>
             <a href="{{ route('ktp.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
             <button onclick="destroy({{$item->id}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
           </td>

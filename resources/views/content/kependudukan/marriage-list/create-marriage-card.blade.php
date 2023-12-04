@@ -96,7 +96,9 @@
                   <input class="form-control" type="file" id="filefoto" name="foto_laki" accept="image/png, image/gif, image/jpeg">
                 </div>
                 <div class="mt-2">
-                  <button type="submit" class="btn btn-primary me-2">Next</button>
+                  <a  class="btn btn-primary me-2" role="tab" data-bs-toggle="tab" 
+                  data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" 
+                  aria-selected="false">Next</a>
                 </div>
               </div>
             </div>

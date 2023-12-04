@@ -3,7 +3,7 @@
 @section('title')
 
 @section('content')
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Kependudukan/</span>Update KTP</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Kependudukan/</span>View KTP</h4>
 
     <!-- Basic Layout -->
     <div class="row">
@@ -26,7 +26,7 @@
                                             class="bx bxs-user-detail"></i></span>
                                     <input type="text" name="nama" value="{{ $ktp->nama }}"
                                         id="basic-icon-default-name" class="form-control"
-                                        aria-describedby="basic-icon-default-name2" required />
+                                        aria-describedby="basic-icon-default-name2" disabled />
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -35,7 +35,7 @@
                                     <span id="basic-icon-default-nik2" class="input-group-text"><i
                                             class="bx bx-user"></i></span>
                                     <input type="text" name="nik" value="{{ $ktp->nik }}" class="form-control"
-                                        id="basic-icon-default-nik" aria-describedby="basic-icon-default-nik2" required />
+                                        id="basic-icon-default-nik" aria-describedby="basic-icon-default-nik2" disabled />
                                 </div>
                             </div>
                         </div>
@@ -47,14 +47,14 @@
                                             class="bx bx-calendar"></i></span>
                                     <input type="text" name="kota_kelahiran" value="{{ $ktp->kota_kelahiran }}"
                                         id="basic-icon-default-ttl" class="form-control ttl-mask"
-                                        aria-describedby="basic-icon-default-ttl2" required />
+                                        aria-describedby="basic-icon-default-ttl2" disabled />
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="basic-icon-default-tgl">Tanggal Lahir</label>
                                 <div class="input-group input-group-merge">
                                     <input class="form-control" name="tanggal_lahir" value="{{ $ktp->tanggal_lahir }}"
-                                        type="date" value="2021-06-18" id="html5-tgl-input" required />
+                                        type="date" value="2021-06-18" id="html5-tgl-input" disabled />
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                 <div class="input-group input-group-merge">
                                     <span id="basic-icon-default-gender2" class="input-group-text"><i
                                             class="bx bx-body"></i></span>
-                                    <select name="jenis_kelamin" class="form-control" id="" required>
+                                    <select name="jenis_kelamin" class="form-control" id="" disabled>
                                         <option value="{{ $ktp->jenis_kelamin }}" selected>{{ $ktp->jenis_kelamin }}
                                         </option>
                                         <option value="Laki-Laki">Laki-Laki</option>
@@ -76,7 +76,7 @@
                                 <label class="form-label" for="basic-icon-default-goldar">Golongan Darah</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class="bx bx-donate-blood"></i></span>
-                                    <select name="gol_darah" class="form-control" id="" required>
+                                    <select name="gol_darah" class="form-control" id="" disabled>
                                         <option value="{{ $ktp->gol_darah }}" selected>{{ $ktp->gol_darah }}</option>
                                         <option value="O">O</option>
                                         <option value="A">A</option>
@@ -93,14 +93,14 @@
                                     <span class="input-group-text"><i class="bx bx-home"></i></span>
                                     <input type="text" name="alamat" value="{{ $ktp->alamat }}"
                                         id="basic-icon-default-address" class="form-control"
-                                        aria-describedby="basic-icon-default-address2" required />
+                                        aria-describedby="basic-icon-default-address2" disabled />
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="basic-icon-default-religion">Agama</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class="bx bxl-slack"></i></span>
-                                    <select name="agama" class="form-control" id="" required>
+                                    <select name="agama" class="form-control" id="" disabled>
                                         <option value="{{ $ktp->agama }}" selected>{{ $ktp->agama }}</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen">Kristen</option>
@@ -118,14 +118,14 @@
                                     <span class="input-group-text"><i class="bx bx-briefcase"></i></span>
                                     <input name="pekerjaan" value="{{ $ktp->pekerjaan }}" type="text"
                                         id="basic-icon-default-work" class="form-control"
-                                        aria-describedby="basic-icon-default-work2" required />
+                                        aria-describedby="basic-icon-default-work2" disabled />
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="basic-icon-default-work">Status Perkawinan</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class="bx bx-briefcase"></i></span>
-                                    <select name="status_perkawinan" class="form-control" id="" required>
+                                    <select name="status_perkawinan" class="form-control" id="" disabled>
                                         <option value="{{ $ktp->status_perkawinan }}" selected>
                                             {{ $ktp->status_perkawinan }}</option>
                                         <option value="Belum Menikah">Belum Menikah</option>
@@ -141,10 +141,10 @@
                                 <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
                                     data-bs-target="#ktp{{ $ktp->id }}"> <i
                                         class='bx bx-image-alt text-primary'></i>Cek File</a> <br>
-                                <input name="file" class="form-control" type="file" id="formFile">
+                                
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        
                     </form>
                 </div>
             </div>
