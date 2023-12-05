@@ -37,10 +37,18 @@
                 <input type="text" id="basic-icon-default-address" class="form-control" aria-describedby="basic-icon-default-address2" />
               </div>
             </div>
-            <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Agama</label>
-              <div class="col-md-12">
-                <input class="form-control" type="date" value="2021-06-18" id="html5-date-input" />
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="basic-icon-default-religion">Agama</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"></span>
+                <select name="agama" class="form-control" id="" required>
+                  <option selected>Pilih Agama</option>
+                  <option value="Islam">Islam</option>
+                  <option value="Kristen">Kristen</option>
+                  <option value="Budha">Budha</option>
+                  <option value="Hindu">Hindu</option>     
+                  <option value="Konghucu">Konghucu</option>                  
+                </select>
               </div>
             </div>
             <div class="mb-3 col-md-6">
@@ -52,52 +60,71 @@
               </select>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Pendidikan</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Golongan Darah</label>
+              <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                <option selected>Pilih Goldar</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="O">O</option>
+                <option value="AB">AB</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Pendidikan</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-study" class="input-group-text"><i class=""></i></span>
                 <input type="text" id="basic-icon-default-study" class="form-control" aria-describedby="basic-icon-default-study" />
               </div>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Pekerjaan</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Pekerjaan</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-jobs" class="input-group-text"><i class=""></i></span>
                 <input type="text" id="basic-icon-default-jobs" class="form-control" aria-describedby="basic-icon-default-jobs" />
               </div>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Status Hubungan Keluarga</label>
-              <div class="input-group input-group-merge">
-                <span id="basic-icon-default-statushub" class="input-group-text"><i class=""></i></span>
-                <input type="text" id="basic-icon-default-statushub" class="form-control" aria-describedby="basic-icon-default-statushub" />
-              </div>
-            </div>
-            <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Status Perkawinan</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Status Hubungan Keluarga</label>
               <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                 <option selected>Pilih Status</option>
-                <option value="1">Kawin Tercatat</option>
-                <option value="2">Belum Kawin</option>
+                <option value="kepalakeluarga">Kepala Keluarga</option>
+                <option value="istri">Istri</option>
+                <option value="anak">Anak</option>
               </select>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Tgl Perkawinan</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Status Perkawinan</label>
+              <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                <option selected>Pilih Status</option>
+                <option value="kawin">Kawin Tercatat</option>
+                <option value="belumKawin">Belum Kawin</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Tgl Perkawinan (Optional)</label>
               <div class="col-md-12">
-                <input class="form-control" type="date" value="2021-06-18" id="html5-date-input" />
+                <input class="form-control" type="date" value="" id="html5-date-input" />
               </div>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Kewarganegaraan</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Kewarganegaraan</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-kewarganegaraan" class="input-group-text"><i class=""></i></span>
                 <input type="text" id="basic-icon-default-kewarganegaraan" class="form-control" aria-describedby="basic-icon-default-kewarganegaraan" />
               </div>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="html5-tgl-input" class="col-md-5 col-form-label">Nama Orang Tua</label>
+              <label for="html5-input" class="col-md-5 col-form-label">Nama Ayah</label>
               <div class="input-group input-group-merge">
-                <span id="basic-icon-default-namaortu" class="input-group-text"><i class=""></i></span>
-                <input type="text" id="basic-icon-default-namaortu" class="form-control" aria-describedby="basic-icon-default-namaortu" />
+                <span id="basic-icon-default-namaayah" class="input-group-text"><i class=""></i></span>
+                <input type="text" id="basic-icon-default-namaayah" class="form-control" aria-describedby="basic-icon-default-namaayah" />
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Nama Ibu</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-namaibu" class="input-group-text"><i class=""></i></span>
+                <input type="text" id="basic-icon-default-namaibu" class="form-control" aria-describedby="basic-icon-default-namaibu" />
               </div>
             </div>
             <div class="col-md-6 mb-3">

@@ -12,14 +12,21 @@ class KK extends Model
     protected $fillable = [
         'nik',
         'nama',
-        'kota_kelahiran',
-        'tanggal_lahir',
+        'ttl',
+        'agama',
         'jenis_kelamin',
         'gol_darah',
-        'alamat',
-        'agama',
-        'status_perkawinan',
+        'pendidikan',
         'pekerjaan',
-        'file_kk'
+        'status_hub_kel',
+        'status_perkawinan',
+        'tgl_perkawinan',
+        'kewarganegaraan',
+        'nama_ayah',
+        'nama_ibu',
+        'file_pengantar_rt',
+        'file_kk_lama',
+        'file_buku_nikah',
+        'file_ktp'
     ];
 }

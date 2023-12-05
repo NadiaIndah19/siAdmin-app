@@ -27,9 +27,6 @@
             data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" 
             aria-selected="false"><i class="tf-icons bx bx-female"></i> Pihak Mempelai Wanita</button>
           </li>
-          {{-- <li class="nav-item">
-            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-messages" aria-controls="navs-justified-messages" aria-selected="false"><i class="tf-icons bx bx-file"></i> Upload Files</button>
-          </li> --}}
         </ul>
         <form action="{{ route('pernikahan.store') }}" method="POST" enctype="multipart/form-data">
           @csrf  
@@ -94,9 +91,6 @@
                 <div class="col-md-6 mb-3">
                   <label for="filefoto" class="form-label">File Foto</label>
                   <input class="form-control" type="file" id="filefoto" name="foto_laki" accept="image/png, image/gif, image/jpeg">
-                </div>
-                <div class="mt-2">
-                  <button type="submit" class="btn btn-primary me-2">Next</button>
                 </div>
               </div>
             </div>

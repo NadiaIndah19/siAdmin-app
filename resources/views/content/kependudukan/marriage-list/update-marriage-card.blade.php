@@ -23,15 +23,12 @@
           <li class="nav-item">
             <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" aria-selected="false"><i class="tf-icons bx bx-female"></i> Pihak Mempelai Wanita</button>
           </li>
-          {{-- <li class="nav-item">
-            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-messages" aria-controls="navs-justified-messages" aria-selected="false"><i class="tf-icons bx bx-file"></i> Upload Files</button>
-          </li> --}}
         </ul>
         <form action="{{ route('pernikahan.update', ['id'=>$pernikahan->id]) }}" method="POST" enctype="multipart/form-data">
           @csrf  
           @method('PUT')
-        <div class="tab-content">
-                  
+        <div class="card"> 
+          <div class="tab-content">        
             <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
               <div class="row">
                 <div class="mb-3 col-md-6">
@@ -225,8 +222,7 @@
                 </div>
               </div>
             </div>
-        
-         
+          </div> 
         </div>
       </form>
       </div>

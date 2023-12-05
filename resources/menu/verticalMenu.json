@@ -63,31 +63,19 @@
       "url": "/info/news"
     },
     {
-      "name": "Perizinan",
-      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
-      "slug": "izin",
-      "submenu": [
-        {
-          "url": "/perizinan/building/building-permit",
-          "name": "IMB (Izin Mendirikan Bangunan)",
-          "slug": "izin-bangunan"
-        },
-        {
-          "url": "/perizinan/bussiness/bussiness-licence",
-          "name": "SIUP (Surat Izin Usaha Perdagangan)",
-          "slug": "izin-bisnis"
-        }
-      ]
-    },
-    {
       "name": "Pelayanan",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "pelayanan",
       "submenu": [
         {
-          "url": "/pelayanan/kks/kks-card",
-          "name": "KKS (Kartu Keluarga Sejahtera)",
-          "slug": "pelayanan-kks-card"
+          "url": "/pelayanan/building/building-permit",
+          "name": "IMB (Izin Mendirikan Bangunan)",
+          "slug": "izin-bangunan"
+        },
+        {
+          "url": "/pelayanan/bussiness/bussiness-licence",
+          "name": "SIUP (Surat Izin Usaha Perdagangan)",
+          "slug": "izin-bisnis"
         },
         {
           "url": "/pelayanan/kip/kip-card",
