@@ -101,4 +101,10 @@ class KTPController extends Controller
 
       return response()->json('Berhasil Menghapus Data');
     }
+
+    public function view ($id)
+    {
+      $ktp = KTP::where('id',$id)->first();
+      return view('content.kependudukan.id-card.view-id-card',compact('ktp'));
+    }
 }

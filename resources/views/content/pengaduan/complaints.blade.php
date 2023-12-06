@@ -44,8 +44,8 @@
                             <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#lampiran{{$item->id}}"> <i class='bx bx-image-alt text-primary'></i>Cek File</button>
                           </td>
                             <td>
-                                {{-- <a href="" class="btn btn-outline-success btn-sm btn-rounded"><i
-                                        class='bx bx-show'></i></a> --}}
+                                <a href="{{ route('pengaduan.view', ['id'=>$item->id]) }}" class="btn btn-outline-success btn-sm btn-rounded"><i
+                                        class='bx bx-show'></i></a>
                                 <a href="{{ route('pengaduan.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i
                                         class='bx bx-message-square-edit'></i></a>
                                 <button onclick="destroy({{$item->id}})" class="btn btn-outline-danger btn-sm"><i

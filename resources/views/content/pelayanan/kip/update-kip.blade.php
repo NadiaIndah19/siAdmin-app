@@ -61,7 +61,10 @@
                                     value="{{ $kip->asal_sekolah }}" />
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="pengantar" class="form-label">File Surat Pengantar RT/RW</label>
+                                <label for="pengantar" class="form-label">File Surat Pengantar RT/RW</label> <br>
+                                <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
+                                    data-bs-target="#rt{{ $kip->id }}"> <i
+                                        class='bx bx-image-alt text-primary'></i>Cek File</a> <br>
                                 <input class="form-control" type="file" name="file_pengantar_rt" id="pengantar">
                             </div>
                             <div class="col-md-6 mb-3">

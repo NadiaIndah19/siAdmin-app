@@ -193,4 +193,11 @@ class AktaPernikahanController extends Controller
     }
 
 
+    public function view ($id)
+    {
+     
+        $pernikahan = AktaPernikahan::where('id',$id)->first();
+        return view('content.kependudukan.marriage-list.view-marriage-card',compact('pernikahan'));
+    }
+
 }

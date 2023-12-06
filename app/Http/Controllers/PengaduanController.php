@@ -89,4 +89,10 @@ class PengaduanController extends Controller
 
         return response()->json('Data Berhasil Dihapus');
     }
+
+    public function view($id)
+    {
+        $pengaduan = Pengaduan::where('id',$id)->first();
+        return view('content.pengaduan.view-complaints',compact('pengaduan'));
+    }
 }
