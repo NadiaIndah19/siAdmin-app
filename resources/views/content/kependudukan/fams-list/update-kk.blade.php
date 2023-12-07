@@ -119,48 +119,48 @@
               <label for="html5-input" class="col-md-5 col-form-label">Kewarganegaraan</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-kewarganegaraan" class="input-group-text"></span>
-                <input type="text" name="kewarganegaraan" id="basic-icon-default-kewarganegaraan" class="form-control" aria-describedby="basic-icon-default-kewarganegaraan" required/>
+                <input type="text" name="kewarganegaraan" id="basic-icon-default-kewarganegaraan" class="form-control" value="{{$kk->kewarganegaraan}}" aria-describedby="basic-icon-default-kewarganegaraan" required/>
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label for="html5-input" class="col-md-5 col-form-label">Nama Ayah</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-namaayah" class="input-group-text"></span>
-                <input type="text" name="nama_ayah" id="basic-icon-default-namaayah" class="form-control" aria-describedby="basic-icon-default-namaayah" required/>
+                <input type="text" name="nama_ayah" id="basic-icon-default-namaayah" class="form-control" value="{{$kk->nama_ayah}}" aria-describedby="basic-icon-default-namaayah" required/>
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label for="html5-input" class="col-md-5 col-form-label">Nama Ibu</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-namaibu" class="input-group-text"></span>
-                <input type="text" name="nama_ibu" id="basic-icon-default-namaibu" class="form-control" aria-describedby="basic-icon-default-namaibu" required/>
+                <input type="text" name="nama_ibu" id="basic-icon-default-namaibu" class="form-control" value="{{$kk->nama_ibu}}" aria-describedby="basic-icon-default-namaibu" required/>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="file_pengantar_rt" class="form-label">File Pengantar RT</label> <br>
               <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
-                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                  data-bs-target="#rt{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
                     </i>Cek File</a> <br>
               <input name="file_pengantar_rt" class="form-control" type="file" id="file_pengantar_rt">
             </div>
             <div class="col-md-6 mb-3">
               <label for="file_buku_nikah" class="form-label">File Buku Nikah</label> <br>
               <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
-                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                  data-bs-target="#buku{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
                     </i>Cek File</a> <br>
               <input name="file_buku_nikah" class="form-control" type="file" id="file_buku_nikah">
             </div>
             <div class="col-md-6 mb-3">
               <label for="file_kk_lama" class="form-label">File KK Lama</label> <br>
               <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
-                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                  data-bs-target="#kklama{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
                     </i>Cek File</a> <br>
               <input name="file_kk_lama" class="form-control" type="file" id="file_kk_lama">
             </div>
             <div class="col-md-6 mb-3">
-              <label for="file_ktp" class="form-label">File KKT</label> <br>
+              <label for="file_ktp" class="form-label">File KTP</label> <br>
               <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
-                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                  data-bs-target="#kkt{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
                     </i>Cek File</a> <br>
               <input name="file_ktp" class="form-control" type="file" id="file_ktp">
             </div>
@@ -172,7 +172,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="kk{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="rt{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -181,7 +181,64 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <iframe src="{{ asset('storage/' . $kk->file_kk) }}" width="100%"
+              <iframe src="{{ asset('storage/' . $kk->file_pengantar_rt) }}" width="100%"
+                  height="400px"></iframe>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="buku{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">File Buku Nikah</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ asset('storage/' . $kk->file_buku_nikah) }}" width="100%"
+                  height="400px"></iframe>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="kklama{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">File KK</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ asset('storage/' . $kk->file_kk_lama) }}" width="100%"
+                  height="400px"></iframe>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="kkt{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">File KK</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ asset('storage/' . $kk->file_ktp) }}" width="100%"
                   height="400px"></iframe>
           </div>
           <div class="modal-footer">
