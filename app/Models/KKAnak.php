@@ -5,34 +5,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KK extends Model
+class KKAnak extends Model
 {
     use HasFactory;
-    protected $table = 'kk';
+    protected $table = 'kk_anaks';
     protected $fillable = [
+        'kk_id',
         'nik',
         'nama',
         'ttl',
         'agama',
         'jenis_kelamin',
+        'pekerjaan',
         'gol_darah',
         'pendidikan',
-        'pekerjaan',
         'status_hub_keluarga',
         'status_perkawinan',
         'tgl_perkawinan',
         'kewarganegaraan',
-        'nama_ayah',
-        'nama_ibu',
         'file_pengantar_rt',
-        'file_kk_lama',
         'file_buku_nikah',
-        'file_ktp'
+        'file_kk_lama',
+        'file_ktp',
     ];
 
 
-    public function anak()
+ 
+    public function kk()
     {
-        return $this->hasMany(KKAnak::class, 'kk_id');
+        return $this->belongsTo(KK::class, 'kk_id', 'id');
     }
 }

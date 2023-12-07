@@ -57,7 +57,21 @@ Route::group(['middleware' => 'auth'], function () {
         Route::PUT('/fams-list/{id}/update-kk', [KKController::class,'update'])->name('kk.update');
         Route::post('/fams-list/create-kk', [KKController::class,'destroy'])->name('kk.destroy');
         Route::get('/fams-list/{id}/view', [KKController::class, 'view'])->name('kk.view');
+
+        Route::get('/fams-list/{id}/child', [KKController::class, 'child'])->name('kk.anak');
+        Route::get('/fams-list/{id}/create', [KKController::class, 'createChild'])->name('kk.anak.create');
+
+        Route::PUT('/fams-list/{id}/update-child', [KKController::class,'updateChild'])->name('kk.anak.update');
+
+        Route::get('/fams-list/{id}/edit', [KKController::class, 'editChild'])->name('kk.anak.edit');
+        Route::post('/fams-list/{id}/store', [KKController::class, 'storeChild'])->name('kk.anak.store');
+        Route::post('/fams-list/destroyChild', [KKController::class, 'destroyChild'])->name('kk.anak.destroy');
+
+
+        
+    
     });
+   
 
 
     // =================== AKTA PERNIKAHAN =============================
@@ -146,8 +160,6 @@ Route::group(['middleware' => 'auth'], function () {
     });  
 
     // ======================================= KIP ==================================================================
-
-    // Route::get('/pelayanan/kip/kip-card', $controller_path . '\layanan\KIPController@index')->name('pelayanan-card-kip');
     Route::prefix('pelayanan/kip/kip-card')->group(function () {
         Route::get('/', [KIPController::class, 'index'])->name('kip.index');
         Route::get('/create', [KIPController::class, 'create'])->name('kip.create');
