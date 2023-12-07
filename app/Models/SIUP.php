@@ -12,11 +12,12 @@ class SIUP extends Model
     protected $fillable = [
         'nama',
         'nik',
-        'judul_siup',
-        'jenis_siup',
-        'lokasi_siup',
-        'lampiran',
-        'deskripsi'
+        'alamat',
+        'no_hp',
+        'jenis_usaha',
+        'alamat_usaha',
+        'status',
+        'tgl_status'
     ];
 
     

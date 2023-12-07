@@ -13,14 +13,12 @@ class IMB extends Model
         'nama',
         'nik',
         'no_hp',
-        'address',
-        'loc_bangunan',
+        'alamat',
+        'lokasi_bangunan',
         'tipe_bangunan',
         'luas_bangunan',
-        'tgl_pengajuan',
-        'tgl_persetujuan',
-        'tgl_penolakan',
-        'tgl_selesai'
+        'status',
+        'tgl_status'
     ];
 
     

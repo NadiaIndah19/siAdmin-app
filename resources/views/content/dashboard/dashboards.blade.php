@@ -192,7 +192,6 @@
             </div>
             <h6 class="d-block mb-1">Kartu Indonesia Sehat</h6>
             <h2 class="card-title mb-1">142</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.24%</small>
           </div>
         </div>
       </div>
@@ -206,7 +205,6 @@
             </div>
             <h6 class="d-block mb-1">Kartu Indonesia Pintar</h6>
             <h2 class="card-title mb-1">89</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +12.14%</small>
           </div>
         </div>
       </div>
@@ -220,7 +218,6 @@
             </div>
             <h6 class="d-block mb-1">Kartu Keluarga Sejahtera</h6>
             <h2 class="card-title mb-1">28</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> 2%</small>
           </div>
         </div>
       </div>
@@ -234,7 +231,6 @@
             </div>
             <h6 class="d-block mb-1">Informasi Berita Terkini</h6>
             <h2 class="card-title mb-1">142</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
           </div>
         </div>
       </div>
@@ -248,7 +244,6 @@
             </div>
             <h6 class="d-block mb-1">Izin Usaha Perdagangan</h6>
             <h2 class="card-title mb-1">28</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> 2%</small>
           </div>
         </div>
       </div>
@@ -262,7 +257,6 @@
             </div>
             <h6 class="d-block mb-1">Pengaduan Terbaru</h6>
             <h2 class="card-title mb-1">142</h2>
-            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +8.42%</small>
           </div>
         </div>
       </div>

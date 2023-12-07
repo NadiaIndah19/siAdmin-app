@@ -12,12 +12,12 @@ class IMBController extends Controller
     public function index()
     {
         $imb = IMB::get();
-        return view('content.imb.imb-card',compact('imb'));
+        return view('content.pelayanan.imb.imb-card',compact('imb'));
     }
 
     public function create()
     {
-        return view('content.imb.create-imb');
+        return view('content.pelayanan.imb.create-imb');
     }
 
     public function store(Request $request)
@@ -36,8 +36,8 @@ class IMBController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'no_hp' => $request->no_hp,
-            'address' => $request->address,
-            'loc_bangunan' => $request->loc_bangunan,
+            'alamat' => $request->alamat,
+            'lokasi_bangunan' => $request->lokasi_bangunan,
             'tipe_bangunan' => $request->tipe_bangunan,
             'luas_bangunan' => $request->luas_bangunan,
             'tipe_bangunan' => $request->tipe_bangunan,
@@ -51,7 +51,7 @@ class IMBController extends Controller
     public function edit($id)
     {
         $imb = imb::where('id',$id)->first();
-        return view('content.imb.update-imb',compact('imb'));
+        return view('content.pelayanan.imb.update-imb',compact('imb'));
     }
 
     public function update(Request $request,$id)
@@ -72,8 +72,8 @@ class IMBController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'no_hp' => $request->no_hp,
-            'address' => $request->address,
-            'loc_bangunan' => $request->loc_bangunan,
+            'alamat' => $request->alamat,
+            'lokasi_bangunan' => $request->lokasi_bangunan,
             'tipe_bangunan' => $request->tipe_bangunan,
             'luas_bangunan' => $request->luas_bangunan,
             'tipe_bangunan' => $request->tipe_bangunan,
@@ -93,5 +93,11 @@ class IMBController extends Controller
         $imb->delete();
 
         return response()->json('Data Berhasil Dihapus');
+    }
+    
+    public function view ($id)
+    {
+      $imb = IMB::where('id',$id)->first();
+      return view('content.pelayanan.imb.view-imb',compact('imb'));
     }
 }

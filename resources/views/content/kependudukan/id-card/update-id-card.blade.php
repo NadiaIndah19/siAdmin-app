@@ -54,7 +54,7 @@
                                 <label class="form-label" for="basic-icon-default-tgl">Tanggal Lahir</label>
                                 <div class="input-group input-group-merge">
                                     <input class="form-control" name="tanggal_lahir" value="{{ $ktp->tanggal_lahir }}"
-                                        type="date" value="2021-06-18" id="html5-tgl-input" required />
+                                        type="date" id="html5-tgl-input" required />
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,6 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-
                                 <label for="formFile" class="form-label">File KK</label> <br>
                                 <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
                                     data-bs-target="#ktp{{ $ktp->id }}"> <i
@@ -169,5 +168,5 @@
               </div>
           </div>
       </div>
-  </div>
+    </div>
 @endsection

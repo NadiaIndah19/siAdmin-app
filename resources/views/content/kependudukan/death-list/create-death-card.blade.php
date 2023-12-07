@@ -69,12 +69,25 @@
                                             value="" />
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="mb-3 col-md-6">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="religion">Agama</label>
+                                <div class="input-group input-group-merge">
+                                  <span class="input-group-text"></span>
+                                  <select name="religion" class="form-control" id="religion" required>
+                                    <option selected>Pilih Agama</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Budha">Budha</option>
+                                    <option value="Hindu">Hindu</option>     
+                                    <option value="Konghucu">Konghucu</option>                  
+                                  </select>
+                                </div>
+                            </div>
+                            {{-- <div class="mb-3 col-md-6">
                                 <label for="religion" class="form-label">Agama</label>
                                 <input type="text" class="form-control" id="religion" name="agama" />
-                            </div>
+                            </div> --}}
                             <div class="mb-3 col-md-6">
                                 <label for="statusAlm" class="form-label">Status Perkawinan</label>
                                 <select id="statusAlm" name="status_perkawinan" class="select2 form-select">

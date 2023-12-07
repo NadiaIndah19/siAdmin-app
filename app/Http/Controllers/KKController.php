@@ -24,42 +24,42 @@ class KKController extends Controller
     public function store (Request $request)
     {      
         $pengantar_rt = $request->file('pengantar_rt');
-        $fc_pengantar_rt = '';
+        $file_pengantar_rt = '';
         if ($pengantar_rt) {
-            $fc_pengantar_rt = $pengantar_rt->getClientOriginalName();            
+            $file_pengantar_rt = $pengantar_rt->getClientOriginalName();            
             $time = time();
-            $newName = $time.$fc_pengantar_rt;            
+            $newName = $time.$file_pengantar_rt;            
             $path = Storage::putFileAs('kk',$pengantar_rt,$newName);
-            $fc_pengantar_rt = $path;
+            $file_pengantar_rt = $path;
           }
 
         $kk_lama = $request->file('kk_lama');
-        $fc_kk_lama = '';
+        $file_kk_lama = '';
         if ($kk_lama) {
-            $fc_kk_lama = $kk_lama->getClientOriginalName();            
+            $file_kk_lama = $kk_lama->getClientOriginalName();            
             $time = time();
-            $newName = $time.$fc_kk_lama;            
+            $newName = $time.$file_kk_lama;            
             $path = Storage::putFileAs('kk',$kk_lama,$newName);
-            $fc_kk_lama = $path;
+            $file_kk_lama = $path;
           }
         
         $buku_nikah = $request->file('buku_nikah');
-        $fc_buku_nikah = '';
+        $file_buku_nikah = '';
         if ($buku_nikah) {
-            $fc_buku_nikah = $buku_nikah->getClientOriginalName();            
+            $file_buku_nikah = $buku_nikah->getClientOriginalName();            
             $time = time();
-            $newName = $time.$fc_buku_nikah;            
+            $newName = $time.$file_buku_nikah;            
             $path = Storage::putFileAs('kk',$buku_nikah,$newName);
-            $fc_buku_nikah = $path;
+            $file_buku_nikah = $path;
           }
         $ktp = $request->file('ktp');
-        $fc_ktp = '';
+        $file_ktp = '';
         if ($ktp) {
-            $fc_ktp = $ktp->getClientOriginalName();            
+            $file_ktp = $ktp->getClientOriginalName();            
             $time = time();
-            $newName = $time.$fc_ktp;            
+            $newName = $time.$file_ktp;            
             $path = Storage::putFileAs('kk',$ktp,$newName);
-            $fc_ktp = $path;
+            $file_ktp = $path;
         }
         // dd($filename);
     
@@ -69,19 +69,19 @@ class KKController extends Controller
             'ttl' => $request->ttl,
             'agama' => $request->agama ,
             'jenis_kelamin' => $request->jenis_kelamin,
-            'golongan_darah' => $request->golongan_darah,
+            'gol_darah' => $request->gol_darah,
             'pendidikan' => $request->pendidikan,
             'pekerjaan' => $request->pekerjaan,
-            'status_hub_kel' => $request->status_hub_kel,
+            'status_hub_keluarga' => $request->status_hub_keluarga,
             'status_perkawinan' => $request->status_perkawinan,
-            'tanggal_perkawinan' => Carbon::parse($request->tanggal_perkawinan)->format('Y-m-d'),
+            'tgl_perkawinan' => Carbon::parse($request->tgl_perkawinan)->format('Y-m-d'),
             'kewarganegaraan' => $request->kewarganegaraan,
             'nama_ayah' => $request->nama_ayah,
             'nama_ibu' => $request->nama_ibu,
-            'file_pengantar_rt' => $fc_pengantar_rt,
-            'file_kk_lama' => $fc_kk_lama,
-            'file_buku_nikah' => $fc_buku_nikah,
-            'file_ktp' => $fc_ktp
+            'file_pengantar_rt' => $file_pengantar_rt,
+            'file_kk_lama' => $file_kk_lama,
+            'file_buku_nikah' => $file_buku_nikah,
+            'file_ktp' => $file_ktp
        ]);
 
        return redirect()->route('kependudukan-kk.index')->with('success-create','Berhasil Menambahkan Data');
@@ -95,50 +95,50 @@ class KKController extends Controller
 
     public function update(Request $request , $id)
     {
-      $pengantar_rt = $request->file('pengantar_rt');
-      $kk_lama = $request->file('kk_lama');
-      $buku_nikah = $request->file('buku_nikah');
-      $ktp = $request->file('ktp');
+      $file_pengantar_rt = $request->file('pengantar_rt');
+      $file_kk_lama = $request->file('kk_lama');
+      $file_buku_nikah = $request->file('buku_nikah');
+      $file_ktp = $request->file('ktp');
        
       $kk = KK::where('id',$id)->first();
-      $suratPengantar = $kk->pengantar_rt;
+      $suratPengantar = $kk->file_pengantar_rt;
       $kkLama = $kk->kk_lama;
       $bukuNikah = $kk->buku_nikah;
       $fcktp = $kk->ktp;
 
-       if ($pengantar_rt) {
-          Storage::disk('public')->delete($kk->pengantar_rt);
-          $fc_pengantar_rt = $pengantar_rt->getClientOriginalName();            
+       if ($file_pengantar_rt) {
+          Storage::disk('public')->delete($kk->file_pengantar_rt);
+          $file_pengantar_rt = $file_pengantar_rt->getClientOriginalName();            
           $time = time();
-          $suratPengantar = $time.$fc_pengantar_rt;            
-          $path = Storage::putFileAs('kk',$pengantar_rt,$suratPengantar);
+          $suratPengantar = $time.$file_pengantar_rt;            
+          $path = Storage::putFileAs('kk',$file_pengantar_rt,$suratPengantar);
           $suratPengantar = $path;          
        }
 
-       if ($kk_lama) {
-        Storage::disk('public')->delete($kk->kk_lama);
-        $fc_kk_lama = $kk_lama->getClientOriginalName();            
+       if ($file_kk_lama) {
+        Storage::disk('public')->delete($kk->file_kk_lama);
+        $file_file_kk_lama = $file_kk_lama->getClientOriginalName();            
         $time = time();
-        $kkLama = $time.$fc_kk_lama;            
-        $path = Storage::putFileAs('kk',$kk_lama,$kkLama);
+        $kkLama = $time.$file_file_kk_lama;            
+        $path = Storage::putFileAs('kk',$file_kk_lama,$kkLama);
         $kkLama = $path;          
        }
 
-       if ($buku_nikah) {
-        Storage::disk('public')->delete($kk->buku_nikah);
-        $fc_buku_nikah = $buku_nikah->getClientOriginalName();            
+       if ($file_buku_nikah) {
+        Storage::disk('public')->delete($kk->file_buku_nikah);
+        $file_file_buku_nikah = $file_buku_nikah->getClientOriginalName();            
         $time = time();
-        $bukuNikah = $time.$fc_buku_nikah;            
-        $path = Storage::putFileAs('kk',$buku_nikah,$bukuNikah);
+        $bukuNikah = $time.$file_file_buku_nikah;            
+        $path = Storage::putFileAs('kk',$file_buku_nikah,$bukuNikah);
         $bukuNikah = $path;          
        }
 
-      if ($ktp) {
+      if ($file_ktp) {
         Storage::disk('public')->delete($kk->ktp);
-        $fc_ktp = $ktp->getClientOriginalName();            
+        $file_ktp = $file_ktp->getClientOriginalName();            
         $time = time();
-        $fcktp = $time.$fc_ktp;            
-        $path = Storage::putFileAs('kk',$ktp,$fcktp);
+        $fcktp = $time.$file_ktp;            
+        $path = Storage::putFileAs('kk',$file_ktp,$fcktp);
         $fcktp = $path;          
       }
 
@@ -148,19 +148,19 @@ class KKController extends Controller
         'ttl' => $request->ttl,
         'agama' => $request->agama ,
         'jenis_kelamin' => $request->jenis_kelamin,
-        'golongan_darah' => $request->golongan_darah,
+        'gol_darah' => $request->gol_darah,
         'pendidikan' => $request->pendidikan,
         'pekerjaan' => $request->pekerjaan,
-        'status_hub_kel' => $request->status_hub_kel,
+        'status_hub_keluarga' => $request->status_hub_keluarga,
         'status_perkawinan' => $request->status_perkawinan,
-        'tanggal_perkawinan' => Carbon::parse($request->tanggal_perkawinan)->format('Y-m-d'),
+        'tgl_perkawinan' => Carbon::parse($request->tgl_perkawinan)->format('Y-m-d'),
         'kewarganegaraan' => $request->kewarganegaraan,
         'nama_ayah' => $request->nama_ayah,
         'nama_ibu' => $request->nama_ibu,
-        'file_pengantar_rt' => $fc_pengantar_rt,
-        'file_kk_lama' => $fc_kk_lama,
-        'file_buku_nikah' => $fc_buku_nikah,
-        'file_ktp' => $fc_ktp
+        'file_pengantar_rt' => $file_pengantar_rt,
+        'file_kk_lama' => $file_kk_lama,
+        'file_buku_nikah' => $file_buku_nikah,
+        'file_ktp' => $file_ktp
        ]);
 
        return redirect()->route('kependudukan-kk.index')->with('success-update','Berhasil Mengubah Data');
@@ -169,11 +169,36 @@ class KKController extends Controller
 
     public function destroy (Request $request)
     {
-      $kk = KK::where('id',$request->id)->first();
-      Storage::disk('public')->delete($kk->file_kk);
+      $kk = KK::where('id',$request->id)->first();  
+
+      Storage::disk('public')->delete($kk->nik);
+      Storage::disk('public')->delete($kk->nama);
+      Storage::disk('public')->delete($kk->ttl);
+      Storage::disk('public')->delete($kk->agama);
+      Storage::disk('public')->delete($kk->jenis_kelamin);
+      Storage::disk('public')->delete($kk->gol_darah);
+      Storage::disk('public')->delete($kk->pendidikan);
+      Storage::disk('public')->delete($kk->pekerjaan);
+      Storage::disk('public')->delete($kk->status_hub_keluarga);
+      Storage::disk('public')->delete($kk->status_perkawinan);
+      Storage::disk('public')->delete($kk->tgl_perkawinan);
+      Storage::disk('public')->delete($kk->kewarganegaraan);
+      Storage::disk('public')->delete($kk->nama_ayah);
+      Storage::disk('public')->delete($kk->nama_ibu);
+      Storage::disk('public')->delete($kk->pengantar_rt);
+      Storage::disk('public')->delete($kk->kk_lama);
+      Storage::disk('public')->delete($kk->buku_nikah);
+      Storage::disk('public')->delete($kk->ktp);
 
       $kk->delete();
-
+      
       return response()->json('Berhasil Menghapus Data');
+      
+    }
+    
+    public function view ($id)
+    {
+      $kk = KK::where('id',$id)->first();
+      return view('content.kependudukan.fams-list.view-kk',compact('kk'));
     }
 }

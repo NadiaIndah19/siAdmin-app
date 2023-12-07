@@ -18,7 +18,7 @@ class KK extends Model
         'gol_darah',
         'pendidikan',
         'pekerjaan',
-        'status_hub_kel',
+        'status_hub_keluarga',
         'status_perkawinan',
         'tgl_perkawinan',
         'kewarganegaraan',

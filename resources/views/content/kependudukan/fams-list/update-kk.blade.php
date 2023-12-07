@@ -13,39 +13,181 @@
         <h5 class="mb-0">Edit KK</h5> <small class="text-muted float-end"></small>
       </div>
       <div class="card-body">
-        <form> 
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-id">ID</label>
-            <input type="text" class="form-control" id="basic-default-id" placeholder="1" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-noKK">No KK</label>
-            <input type="text" class="form-control" id="basic-default-noKK" placeholder="2423131312321232" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-fullname">Full Name</label>
-            <input type="text" class="form-control" id="basic-default-fullname" placeholder="Nadia Indah" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-address">Alamat</label>
-            <div class="input-group input-group-merge">
-              <input type="text" id="basic-default-address" class="form-control" placeholder="Surabaya No 31 B" aria-describedby="basic-default-email2" />
+        <form action="{{ route('kk.update', ['id' => $kk->id]) }}" method="POST" 
+          enctype="multipart/form-data">
+          @csrf
+          @method('PUT')
+          <div class="row">
+            <div class="mb-3 col-md-6">
+              <label class="form-label" for="basic-icon-default-nik">NIK</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-nik2" class="input-group-text"></span>
+                <input type="text" name="nik" value="{{ $kk->nik }}" class="form-control" id="basic-icon-default-nik" 
+                aria-describedby="basic-icon-default-nik2" required/>
+              </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="html5-tgl-input" class="col-md-2 col-form-label">Tanggal Pendaftaran KK</label>
-            <div class="col-md-12">
-              <input class="form-control" type="date" value="2021-06-18" id="html5-date-input" />
+            <div class="mb-3 col-md-6">
+              <label class="form-label" for="basic-icon-default-name">Nama Lengkap</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-name2" class="input-group-text"></span>
+                <input type="text" name="nama" value="{{ $kk->nama }}" id="basic-icon-default-name" class="form-control" aria-describedby="basic-icon-default-name2" required/>
+              </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-status">Status</label>
-            <input type="text" id="basic-default-status" class="form-control" placeholder="aktif"/>
-          </div>
+            <div class="mb-3 col-md-6">
+              <label class="form-label" for="basic-icon-default-address">TTL</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"></span>
+                <input type="text" name="ttl" value="{{ $kk->ttl }}" id="basic-icon-default-address" class="form-control" aria-describedby="basic-icon-default-address2" required/>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="basic-icon-default-religion">Agama</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"></span>
+                <select name="agama" class="form-control" id="" required>
+                  <option value="{{ $kk->agama }}" selected>{{ $kk->agama }}
+                  </option>
+                  <option value="Islam">Islam</option>
+                  <option value="Kristen">Kristen</option>
+                  <option value="Budha">Budha</option>
+                  <option value="Hindu">Hindu</option>     
+                  <option value="Konghucu">Konghucu</option>                  
+                </select>
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label class="form-label" for="basic-icon-default-status">Jenis Kelamin</label>
+              <select name="jenis_kelamin" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" required>
+                <option value="{{ $kk->jenis_kelamin }}" selected>{{ $kk->jenis_kelamin }}
+                </option>
+                <option value="Laki-Laki">Laki-laki</option>
+                <option value="Prempuan">Perempuan</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Golongan Darah</label>
+              <select name="gol_darah" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" required>
+                <option value="{{ $kk->gol_darah }}" selected>{{ $kk->gol_darah }}
+                </option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="O">O</option>
+                <option value="AB">AB</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Pendidikan</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-study" class="input-group-text"></span>
+                <input type="text" name="pendidikan" value="{{ $kk->pendidikan }}" id="basic-icon-default-study" class="form-control" aria-describedby="basic-icon-default-study" required/>
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Pekerjaan</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-jobs" class="input-group-text"></span>
+                <input type="text" name="pekerjaan" value="{{ $kk->pekerjaan }}" id="basic-icon-default-jobs" class="form-control" aria-describedby="basic-icon-default-jobs" required/>
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Status Hubungan Keluarga</label>
+              <select class="form-select" name="status_hub_keluarga" id="exampleFormControlSelect1" aria-label="Default select example" required>
+                <option value="{{ $kk->status_hub_keluarga }}" selected>{{ $kk->status_hub_keluarga }}
+                </option>
+                <option value="kepalakeluarga">Kepala Keluarga</option>
+                <option value="istri">Istri</option>
+                <option value="anak">Anak</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Status Perkawinan</label>
+              <select name="status_perkawinan" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" required>
+                <option value="{{ $kk->status_perkawinan }}" selected>{{ $kk->status_perkawinan }}
+                </option>
+                <option value="kawin">Kawin Tercatat</option>
+                <option value="belumKawin">Belum Kawin</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Tgl Perkawinan (Optional)</label>
+              <div class="col-md-12">
+                <input class="form-control" name="tgl_perkawinan" value="{{ $kk->tgl_perkawinan }}"
+                  type="date" id="html5-tgl-input" required />
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Kewarganegaraan</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-kewarganegaraan" class="input-group-text"></span>
+                <input type="text" name="kewarganegaraan" id="basic-icon-default-kewarganegaraan" class="form-control" aria-describedby="basic-icon-default-kewarganegaraan" required/>
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Nama Ayah</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-namaayah" class="input-group-text"></span>
+                <input type="text" name="nama_ayah" id="basic-icon-default-namaayah" class="form-control" aria-describedby="basic-icon-default-namaayah" required/>
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="html5-input" class="col-md-5 col-form-label">Nama Ibu</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-namaibu" class="input-group-text"></span>
+                <input type="text" name="nama_ibu" id="basic-icon-default-namaibu" class="form-control" aria-describedby="basic-icon-default-namaibu" required/>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="file_pengantar_rt" class="form-label">File Pengantar RT</label> <br>
+              <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
+                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                    </i>Cek File</a> <br>
+              <input name="file_pengantar_rt" class="form-control" type="file" id="file_pengantar_rt">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="file_buku_nikah" class="form-label">File Buku Nikah</label> <br>
+              <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
+                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                    </i>Cek File</a> <br>
+              <input name="file_buku_nikah" class="form-control" type="file" id="file_buku_nikah">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="file_kk_lama" class="form-label">File KK Lama</label> <br>
+              <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
+                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                    </i>Cek File</a> <br>
+              <input name="file_kk_lama" class="form-control" type="file" id="file_kk_lama">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="file_ktp" class="form-label">File KKT</label> <br>
+              <a class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal"
+                  data-bs-target="#kk{{ $kk->id }}"> <i class='bx bx-image-alt text-primary'>
+                    </i>Cek File</a> <br>
+              <input name="file_ktp" class="form-control" type="file" id="file_ktp">
+            </div>
+          </div> 
           <button type="submit" class="btn btn-primary">Send</button>
         </form>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal fade" id="kk{{ $kk->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">File KK</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ asset('storage/' . $kk->file_kk) }}" width="100%"
+                  height="400px"></iframe>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
   </div>
 </div>
 

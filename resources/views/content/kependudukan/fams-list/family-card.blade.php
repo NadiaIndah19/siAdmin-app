@@ -18,13 +18,13 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Nomor KK</th>
+          <th>NIK</th>
           <th>Nama Kepala Keluarga</th>
           <th>TTL</th>
           <th>Jenis Kelamin</th>
           <th>Agama</th>
-          <th>Pendidikan</th>
-          <th>Jenis Pekerjaan</th>
+          <th>Nama Ayah</th>
+          <th>Nama Ibu</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -38,19 +38,14 @@
           <td>{{$item->nik}}</td>
           <td>{{$item->nama}}</td>
           <td>{{$item->ttl}}</td>
-          <td>{{$item->agama}}</td>
           <td>{{$item->jenis_kelamin}}</td>
-          <td>{{$item->gol_darah}}</td>
-          <td>{{$item->pendidikan}}</td>
-          <td>{{$item->pekerjaan}}</td>
-          <td>{{$item->status_hub_kel}}</td>
-          <td>{{$item->status_perkawinan}}</td>
-          <td>{{\Carbon\Carbon::parse($item->tgl_perkawinan)->format('m F Y')}}</td>
-          <td>{{$item->kewarganegaraan}}</td>
+          <td>{{$item->agama}}</td>
           <td>{{$item->nama_ayah}}</td>
           <td>{{$item->nama_ibu}}</td>
           <td>
-            <a href="{{ route('ktp.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
+            <a href="{{ route('kk.view', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm"><i
+              class='bx bx-show'></i></a>
+            <a href="{{ route('kk.edit', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
             <button onclick="destroy({{$item->id}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
           </td>
         </tr> 
@@ -62,4 +57,41 @@
 </div>
 <!--/ Basic Bootstrap Table -->
 
+@endsection
+
+@section('js')
+    <script>
+        function destroy(id) {          
+          swal({
+            title: "Are you sure?",            
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+              type: 'POST',
+              url: "{{ route('kk.destroy') }}",
+              dataType: 'html',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  "id": id,
+                  "_token": "{{ csrf_token() }}"
+              },
+
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
+        }
+    </script>
 @endsection

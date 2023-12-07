@@ -68,12 +68,12 @@
       "slug": "pelayanan",
       "submenu": [
         {
-          "url": "/pelayanan/building/building-permit",
+          "url": "/pelayanan/imb/imb-card",
           "name": "IMB (Izin Mendirikan Bangunan)",
           "slug": "izin-bangunan"
         },
         {
-          "url": "/pelayanan/bussiness/bussiness-licence",
+          "url": "/pelayanan/siup/siup-card",
           "name": "SIUP (Surat Izin Usaha Perdagangan)",
           "slug": "izin-bisnis"
         },

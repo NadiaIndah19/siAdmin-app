@@ -11,7 +11,7 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
     <h5>Surat Izin Usaha Perdagangan</h5>
-    <a href="{{ url('pelayanan/bussiness/create-bussiness-licence') }}" type="button" class="btn btn-outline-primary">+&nbsp; Tambah Data</a>
+    <a href="{{ route('siup.create') }}" type="button" class="btn btn-outline-primary">+&nbsp; Tambah Data</a>
   </div>
   <div class="table-responsive text-nowrap">
     <table class="table">
@@ -29,19 +29,23 @@
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
+        @php
+            $no=1;
+        @endphp
+        @foreach ($siup as $item)
         <tr>
           <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-          <td>Albert Cook</td>
-          <td>Baturetno gg. Melati No 2B</td>
-          <td>082313483727</td>
-          <td>Material</td>
-          <td>Jl. Goa Akbar 56 Tuban</td>
-          <td>17-09-2022</td>
-          <td>On Proses</td>
+          <td>{{$item->nik}}</td>
+          <td>{{$item->nama}}</td>
+          <td>{{$item->alamat}}</td>
+          <td>{{$item->no_hp}}</td>
+          <td>{{$item->lokasi_bangunan}}</td>
+          <td>{{$item->status}}</td>
+          <td>{{$item->tgl_status}}</td>
           <td>
-            <a href="" class="btn btn-outline-success btn-sm btn-rounded"><i class='bx bx-show'></i></a>
-            <a href="" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
-            <button onclick="destroy({{}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
+            <a href="{{ route('siup.view', ['id' => $item->id]) }}" class="btn btn-outline-success btn-sm btn-rounded"><i class='bx bx-show'></i></a>
+            <a href="{{ route('siup.edit', ['id' => $item->id]) }}" class="btn btn-outline-info btn-sm btn-rounded"><i class='bx bx-message-square-edit'></i></a>
+            <button onclick="destroy({{$item->id}})"  class="btn btn-outline-danger btn-sm"><i class='bx bx-trash-alt'></i></button>
           </td>
           {{-- <td>
             <div class="dropdown">
@@ -54,10 +58,49 @@
             </div>
           </td> --}}
         </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
 </div>
 <!--/ Basic Bootstrap Table -->
 
+@endsection
+
+
+@section('js')
+    <script>
+        function destroy(id) {          
+          swal({
+            title: "Are you sure?",            
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+              type: 'POST',
+              url: "{{ route('siup.destroy') }}",
+              dataType: 'html',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  "id": id,
+                  "_token": "{{ csrf_token() }}"
+              },
+
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
+        }
+    </script>
 @endsection

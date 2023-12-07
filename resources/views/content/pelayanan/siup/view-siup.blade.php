@@ -4,7 +4,7 @@
 
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">Pelayanan / Bussiness / </span> SIUP 
+  <span class="text-muted fw-light">Pelayanan / </span> SIUP 
 </h4>
 
 <div class="row">
@@ -24,19 +24,19 @@
             </div>
             <div class="mb-3 col-md-6">
               <label for="nohp" class="form-label">No Hp</label>
-              <input type="text" class="form-control" id="nohp" name="nohp" maxlength="6" value="083284823723" disabled/>
+              <input type="text" class="form-control" id="nohp" name="nohp" value="083284823723" disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="jenisbisnis" class="form-label">Jenis Usaha</label>
-              <input type="text" class="form-control" id="jenisusaha" name="jenisusaha" maxlength="6" value="Material" disabled/>
+              <input type="text" class="form-control" id="jenisusaha" name="jenisusaha" value="Material" disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="locs" class="form-label">Alamat Usaha</label>
-              <input type="text" class="form-control" id="locs" name="locs" maxlength="6" value="Kalijogo Latsari 1A" disabled/>
+              <input type="text" class="form-control" id="locs" name="locs" value="Kalijogo Latsari 1A" disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="status" class="form-label">Status</label>
-              <input type="text" class="form-control" id="status" name="status" maxlength="6" value="On Proses" disabled/>
+              <input type="text" class="form-control" id="status" name="status" value="On Proses" disabled/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="basic-icon-default-tglstatus" class="form-label">Tgl Status</label>

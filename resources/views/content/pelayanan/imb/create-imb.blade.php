@@ -15,44 +15,50 @@
       </div>
       <hr class="my-0">
       <div class="card-body">
-        <form id="formAccountSettings" method="POST" onsubmit="return false">
+        <form action="{{ route('imb.store') }}" id="formAccountSettings" method="POST"  
+        enctype="multipart/form-data"> 
+        @csrf
           <div class="row">
             <div class="mb-3 col-md-6">
               <label for="nik" class="form-label">NIK</label>
-              <input class="form-control" type="text" id="nik" name="nik"/>
+              <input class="form-control" type="text" id="nik" name="nik" required/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="nama" class="form-label">Nama Lengkap</label>
-              <input class="form-control" type="text" id="nama" name="nama" autofocus/>
+              <input class="form-control" type="text" id="nama" name="nama" autofocus required/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="address" class="form-label">Alamat</label>
-              <input type="text" class="form-control" id="address" name="address"/>
+              <label for="alamat" class="form-label">Alamat</label>
+              <input type="text" class="form-control" id="alamat" name="alamat" required/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="nohp" class="form-label">No Hp</label>
-              <input type="text" class="form-control" id="nohp" name="nohp" maxlength="6"/>
+              <label for="no_hp" class="form-label">No Hp</label>
+              <input type="text" class="form-control" id="no_hp" name="no_hp" required/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="locs" class="form-label">Lokasi Bangunan</label>
-              <input type="text" class="form-control" id="locs" name="locs" maxlength="6"/>
+              <label for="lokasi_bangunan" class="form-label">Lokasi Bangunan</label>
+              <input type="text" class="form-control" id="lokasi_bangunan" name="lokasi_bangunan" required/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="tipelocs" class="form-label">Tipe Bangunan</label>
-              <input type="text" class="form-control" id="tipelocs" name="tipelocs" maxlength="6"/>
+              <label for="tipe_bangunan" class="form-label">Tipe Bangunan</label>
+              <input type="text" class="form-control" id="tipe_bangunan" name="tipe_bangunan" required/>
             </div>
             <div class="mb-3 col-md-6">
-              <label for="luaslocs" class="form-label">Luas Bangunan</label>
-              <input type="text" class="form-control" id="luaslocs" name="luaslocs" maxlength="6"/>
+              <label for="luas_bangunan" class="form-label">Luas Bangunan</label>
+              <input type="text" class="form-control" id="luas_bangunan" name="luas_bangunan" required/>
             </div>
             <div class="mb-3 col-md-6">
               <label for="status" class="form-label">Status</label>
-              <input type="text" class="form-control" id="status" name="status" maxlength="6"/>
+              <select name="status" class="form-control" id="status" required>
+                <option value="pengajuan">Pengajuan</option>
+                <option value="Penerimaan">Penerimaan</option>
+                <option value="Penolakan">Penolakan</option>              
+            </select>
             </div>
             <div class="mb-3 col-md-6">
               <label for="basic-icon-default-tglstatus" class="form-label">Tgl Status</label>
               <div class="input-group input-group-merge">
-                <input class="form-control" type="date" value="2021-06-18" id="tgl_status" />
+                <input class="form-control" type="date" name="tgl_status" id="tgl_status"/>
               </div>
             </div>
             <div class="mt-2">
