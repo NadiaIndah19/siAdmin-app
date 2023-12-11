@@ -92,14 +92,6 @@
                   <label for="filefoto" class="form-label">File Foto</label>
                   <input class="form-control" type="file" id="filefoto" name="foto_laki" accept="image/png, image/gif, image/jpeg">
                 </div>
-<<<<<<< HEAD
-=======
-                <div class="mt-2">
-                  <a  class="btn btn-primary me-2" role="tab" data-bs-toggle="tab" 
-                  data-bs-target="#navs-justified-profile" aria-controls="navs-justified-profile" 
-                  aria-selected="false">Next</a>
-                </div>
->>>>>>> 780cd50a779bc4bf97b0655a5e1a6e78341f9a20
               </div>
             </div>
             <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">

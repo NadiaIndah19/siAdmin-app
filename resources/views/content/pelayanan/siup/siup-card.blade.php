@@ -35,11 +35,11 @@
         @foreach ($siup as $item)
         <tr>
           <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-          <td>{{$item->nik}}</td>
           <td>{{$item->nama}}</td>
           <td>{{$item->alamat}}</td>
           <td>{{$item->no_hp}}</td>
-          <td>{{$item->lokasi_bangunan}}</td>
+          <td>{{$item->jenis_usaha}}</td>
+          <td>{{$item->alamat_usaha}}</td>
           <td>{{$item->status}}</td>
           <td>{{$item->tgl_status}}</td>
           <td>
@@ -92,7 +92,7 @@
               },
 
               success: function(data) {                 
-                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                  swal("Good job!", "Data Berhasil di hapus!!", "success");
                   location.reload();    
               },
               error: function(data) {

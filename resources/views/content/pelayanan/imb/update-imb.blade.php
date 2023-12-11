@@ -3,7 +3,7 @@
 @section('title')
 
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pelayanan / Building /</span> IMB </h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pelayanan /</span> IMB </h4>
 
 <!-- Basic Layout -->
 <div class="row">

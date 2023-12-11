@@ -19,9 +19,9 @@ class PengaduanSeed extends Seeder
             [
                 'nama' => 'Nardi',
                 'nik' => '123123123',
-                'judul_pengaduan' => 'ambulance kecamatan',
-                'jenis_pengaduan' => 'Pendidikan',
-                'lokasi_pengaduan' => 'kediri',
+                'judul_pengaduan' => 'Jalan rusak berlubang',
+                'jenis_pengaduan' => 'Lingkungan',
+                'lokasi_pengaduan' => 'SMAN 1 Tuban',
                 'lampiran' =>' ',
                 'deskripsi' => 'tidak ada'
             ]

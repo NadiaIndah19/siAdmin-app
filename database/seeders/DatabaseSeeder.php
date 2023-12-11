@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
         $this->call(KTPSeed::class);
         $this->call(PengaduanSeed::class);
         $this->call(SIUPSeed::class);
+        $this->call(KKSeed::class);
+
 
     }
 }

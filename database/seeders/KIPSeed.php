@@ -27,7 +27,7 @@ class KIPSeed extends Seeder
                 'file_ktp' => ' ',
                 'file_kk' => ' ',
                 'file_akta' => ' ',
-                'asal_sekolah' => ' ',
+                'asal_sekolah' => 'SMKN 2 Tuban',
                 'file_kks' => ' ',
                 'file_rapor' => ' ',
                 'file_penerima_bsm' => ' '
