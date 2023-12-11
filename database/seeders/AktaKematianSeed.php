@@ -42,5 +42,6 @@ class AktaKematianSeed extends Seeder
                 'file_buku_nikah' => ' '
             ]
         ));
+        
     }
 }

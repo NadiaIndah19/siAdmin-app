@@ -35,32 +35,10 @@
         },
         {
           "url": "/kependudukan/death-list/death-card",
-          "name": "AKTA Kematian",
+          "name": "AKTA",
           "slug": "kependudukan-death-card"
-        },
-        {
-          "url": "/kependudukan/birth-list/birth-card",
-          "name": "AKTA Kelahiran",
-          "slug": "kependudukan-birth-card"
-        },
-        {
-          "url": "/kependudukan/marriage-list/marriage-card",
-          "name": "AKTA Pernikahan",
-          "slug": "kependudukan-marriage-card"
         }
       ]
-    },
-    {
-      "name": "Pengaduan",
-      "icon": "menu-icon tf-icons bx bx-box",
-      "slug": "info-complaints",
-      "url": "/pengaduan/complaints"
-    },
-    {
-      "name": "Informasi",
-      "icon": "menu-icon tf-icons bx bx-info-circle",
-      "slug": "info-news",
-      "url": "/info/news"
     },
     {
       "name": "Pelayanan",
@@ -85,19 +63,16 @@
       ]
     },
     {
-    "menuHeader": "Sistematik"
+      "name": "Pengaduan",
+      "icon": "menu-icon tf-icons bx bx-box",
+      "slug": "info-complaints",
+      "url": "/pengaduan/complaints"
     },
     {
-      "name": "Data Penduduk",
-      "icon": "menu-icon tf-icons bx bx-collection",
-      "slug": "cards-basic",
-      "url": "/cards/basic"
-    },
-    {
-      "name": "Statistik Kelurahan",
-      "icon": "menu-icon tf-icons bx bx-crown",
-      "slug": "icons-boxicons",
-      "url": "icons/boxicons"
+      "name": "Informasi",
+      "icon": "menu-icon tf-icons bx bx-info-circle",
+      "slug": "info-news",
+      "url": "/info/news"
     }
   ]
 }

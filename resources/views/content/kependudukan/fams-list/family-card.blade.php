@@ -84,7 +84,7 @@
               },
 
               success: function(data) {                 
-                swal("Good job!", "Data Berhasil Dihapus!!", "success");
+                  swal("Good job!", "Data Berhasil di hapus!!", "success");
                   location.reload();    
               },
               error: function(data) {

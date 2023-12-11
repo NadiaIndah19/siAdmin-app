@@ -9,13 +9,11 @@
 
     <div class="row">
         <div class="col-md-12">
-            <ul class="nav nav-pills flex-column flex-md-row mb-3">
-                <li class="nav-item"><a class="nav-link" href="{{ url('pelayanan/kks/kks-card') }}"><i
-                            class="bx bx-user me-1"></i> KKS</a></li>
-                {{-- <li class="nav-item"><a class="nav-link" href="{{url('pelayanan/kis/kis-card')}}"><i class="bx bx-bell me-1"></i> KIS</a></li> --}}
-                <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i
-                            class="bx bx-link-alt me-1"></i> KIP</a></li>
-            </ul>
+            {{-- <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                <li class="nav-item"><a class="nav-link" href="{{ url('pelayanan/kks/kks-card') }}"><i class="bx bx-user me-1"></i> KKS</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('pelayanan/kis/kis-card')}}"><i class="bx bx-bell me-1"></i> KIS</a></li>
+                <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-link-alt me-1"></i> KIP</a></li>
+            </ul> --}}
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h5>Daftar Kartu Indonesia Pintar</h5>
@@ -33,11 +31,11 @@
                                 <th>Asal Sekolah</th>
                                 <th>File KK</th>
                                 <th>File AKTA</th>
-                                <th>File KTP</th>
+                                {{-- <th>File KTP</th>
                                 <th>File Surat RT</th>
                                 <th>File Rapor</th>
                                 <th>File KKS</th>
-                                <th>File Penerima BSM</th>
+                                <th>File Penerima BSM</th> --}}
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -65,7 +63,7 @@
                                             data-bs-target="#akta{{ $item->id }}"> <i
                                                 class='bx bx-image-alt text-primary'></i>Cek File</button>
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
                                             data-bs-target="#ktp{{ $item->id }}"> <i
                                                 class='bx bx-image-alt text-primary'></i>Cek File</button>
@@ -89,7 +87,7 @@
                                         <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
                                             data-bs-target="#bsm{{ $item->id }}"> <i
                                                 class='bx bx-image-alt text-primary'></i>Cek File</button>
-                                    </td>
+                                    </td> --}}
                                     <td>
                                         <a href="{{ route('kip.view', ['id' => $item->id]) }}"
                                             class="btn btn-outline-info btn-sm"><i class='bx bx-show'></i></a>
@@ -287,7 +285,7 @@
                             },
 
                             success: function(data) {
-                                swal("Good job!", "Data Berhasil Dihapus!!", "success");
+                                swal("Good job!", "Data Berhasil di hapus!!", "success");
                                 location.reload();
                             },
                             error: function(data) {

@@ -3,14 +3,14 @@
 @section('title')
 
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pelayanan /</span> SIUP </h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pelayanan /</span> IMB </h4>
 
 <!-- Basic Layout -->
 <div class="row">
   <div class="col-xl">
     <div class="card mb-4">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">Pendaftaran Surat Izin Usaha Perdagangan</h5>
+        <h5 class="mb-0">Pendaftaran Izin Mendirikan Bangunan</h5>
         <small class="text-muted float-end">Masukkan data dengan benar</small>
       </div>
       <hr class="my-0">

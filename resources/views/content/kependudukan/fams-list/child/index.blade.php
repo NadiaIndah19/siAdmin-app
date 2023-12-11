@@ -376,16 +376,16 @@
                                 "_token": "{{ csrf_token() }}"
                             },
 
-                            success: function(data) {
-                                swal("Good job!", "Data Berhasil Dihapus!!", "success");
-                                location.reload();
-                            },
-                            error: function(data) {
-                                console.log(data);
-                            }
-                        });
-                    }
-                });
+              success: function(data) {                 
+                  swal("Good job!", "Data Berhasil di hapus!!", "success");
+                  location.reload();    
+              },
+              error: function(data) {
+                  console.log(data);
+              }
+           });
+            } 
+          });
         }
     </script>
 @endsection

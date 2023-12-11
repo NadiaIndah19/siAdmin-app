@@ -4,8 +4,7 @@
 
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">Pelayanan / Building / </span> IMB 
-</h4>
+  <span class="text-muted fw-light">Pelayanan /</span> IMB </h4>
 
 <div class="row">
   <div class="col-md-12">
