@@ -23,10 +23,6 @@ class KKAnak extends Model
         'status_perkawinan',
         'tgl_perkawinan',
         'kewarganegaraan',
-        'file_pengantar_rt',
-        'file_buku_nikah',
-        'file_kk_lama',
-        'file_ktp',
     ];
 
 

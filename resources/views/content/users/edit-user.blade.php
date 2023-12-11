@@ -31,9 +31,15 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-default-password">Password</label>
-            <input type="text" name="password" id="basic-default-password" class="form-control password-mask" placeholder="*********" />
-          </div>
+            <label class="form-label" for="basic-icon-default-password">Password</label>
+            <div class="input-group input-group-merge">
+                <span id="basic-icon-default-password2" class="input-group-text"><i
+                        class="bx bx-key"></i></span>
+                
+                <input type="text" id="password" name="password" class="form-control password-mask" />
+                <a type="button" class="btn btn-primary btn-sm" href="#" onclick="generate()">Generate</a>
+            </div>
+        </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-role">Role</label>
             <select name="roles" class="form-control" id="">
@@ -53,4 +59,44 @@
   </div>
 </div>
 
+@endsection
+
+
+@section('js')
+    <script>
+        var pwd = $("#pwd")
+        var button = $("button")
+        var len = $('#Length')
+        var A_Z = $('#A-Z')
+        var a_z = $('#a-z')
+        var num = $('#0-1')
+        var sc = $('#SpecialChars')
+
+        function generate() {
+            console.log('1');
+            var passwordList = ["password1", "password2", "password3"];
+            $("#password").val(CreateRandomPassword( len.val() ,A_Z.is(":checked"),a_z.is(":checked"),num.is(":checked"),sc.val()))
+        }
+
+        function CreateRandomPassword(Length, isUpperAlpha, isLowerAlpha, isNumaric, SpecialChars) {
+            var _allowedChars = "";
+            if (isUpperAlpha != false)
+                _allowedChars += "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+            if (isLowerAlpha != false)
+                _allowedChars += "abcdefghijkmnopqrstuvwxyz";
+            if (isNumaric != false)
+                _allowedChars += "0123456789";
+            _allowedChars += SpecialChars;
+            if (!Length)
+                Length = 8
+            var chars = "";
+            allowedCharCount = _allowedChars.length;
+            if (allowedCharCount == 0)
+                return " ";
+            for (var i = 0; i < Length; i++) {
+                chars += _allowedChars[Math.floor(Math.random() * Math.floor(allowedCharCount))];
+            }
+            return chars;
+        }
+    </script>
 @endsection

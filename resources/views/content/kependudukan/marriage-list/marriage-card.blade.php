@@ -92,7 +92,7 @@
                             },
 
                             success: function(data) {
-                                swal("Good job!", "Data Berhasil ditambahkan!!", "success");
+                                swal("Good job!", "Data Berhasil Dihapus!!", "success");
                                 location.reload();
                             },
                             error: function(data) {

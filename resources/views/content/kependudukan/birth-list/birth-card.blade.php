@@ -51,13 +51,13 @@
                                     <td>{{ $item->tempat_lahir_anak }}</td>
                                     <td>{{ \Carbon\Carbon::parse($item->tanggal_lahir_anak)->format('d F Y') }}</td>
                                     <td>
-                                        <a href="{{ route('aktakelahiran.view', ['id'=>$item->id]) }}" class="btn btn-outline-info btn-sm"><i
-                                            class='bx bx-show'></i></a>
+                                        <a href="{{ route('aktakelahiran.view', ['id' => $item->id]) }}"
+                                            class="btn btn-outline-info btn-sm"><i class='bx bx-show'></i></a>
                                         <a class="btn btn-outline-primary btn-sm"
-                                            href="{{ route('aktakelahiran.edit', ['id'=>$item->id]) }}"><i
+                                            href="{{ route('aktakelahiran.edit', ['id' => $item->id]) }}"><i
                                                 class="bx bx-edit-alt me-1"></i></a>
-                                        <a href="#" class="btn btn-outline-danger btn-sm" onclick="destroy({{$item->id}})"><i
-                                                class="bx bx-trash me-1"></i>
+                                        <a href="#" class="btn btn-outline-danger btn-sm"
+                                            onclick="destroy({{ $item->id }})"><i class="bx bx-trash me-1"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -73,37 +73,37 @@
 
 @section('js')
     <script>
-          function destroy(id) {          
-          swal({
-            title: "Are you sure?",            
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              $.ajax({
-              type: 'POST',
-              url: "{{ route('aktakelahiran.destroy') }}",
-              dataType: 'html',
-              headers: {
-                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              },
-              data: {
-                  "id": id,
-                  "_token": "{{ csrf_token() }}"
-              },
+        function destroy(id) {
+            swal({
+                    title: "Are you sure?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "{{ route('aktakelahiran.destroy') }}",
+                            dataType: 'html',
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            data: {
+                                "id": id,
+                                "_token": "{{ csrf_token() }}"
+                            },
 
-              success: function(data) {                 
-                  swal("Good job!", "Data Berhasil ditambahkan!!", "success");
-                  location.reload();    
-              },
-              error: function(data) {
-                  console.log(data);
-              }
-           });
-            } 
-          });
+                            success: function(data) {
+                                swal("Good job!", "Data Berhasil Dihapus!!", "success");
+                                location.reload();
+                            },
+                            error: function(data) {
+                                console.log(data);
+                            }
+                        });
+                    }
+                });
         }
     </script>
 @endsection

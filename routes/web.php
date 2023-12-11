@@ -33,6 +33,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/{id}/edit-user', [UserController::class, 'edit'])->name('user-management.edit');
         Route::put('/{id}/edit-user', [UserController::class, 'update'])->name('user-management.update');
         Route::post('/edit-user', [UserController::class, 'destroy'])->name('user-management.destroy');
+
+        Route::get('/change-password', [UserController::class, 'changepassword'])->name('user.changepassword');
+        Route::post('/storechange-password', [UserController::class, 'storechangepassword'])->name('user.storechangepassword');
+
+
     });
 
     // =============== KTP =============================================

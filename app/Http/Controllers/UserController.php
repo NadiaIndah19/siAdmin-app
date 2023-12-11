@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -13,16 +14,16 @@ class UserController extends Controller
     {
         $user = User::with('roles')->get();
         // dd($user);        
-        return view('content.users.user-management',compact('user'));
+        return view('content.users.user-management', compact('user'));
     }
 
     public function create()
     {
         $roles = Role::get();
-        return view('content.users.add-user',compact('roles'));
+        return view('content.users.add-user', compact('roles'));
     }
 
-    public function store (Request $request)
+    public function store(Request $request)
     {
 
         $password = bcrypt($request->password);
@@ -37,28 +38,28 @@ class UserController extends Controller
         // assign role
         $user->assignRole($request->role);
 
-        return redirect()->route('user-management')->with('success-create','Anda Berhasil Menambahkan Data');
+        return redirect()->route('user-management')->with('success-create', 'Anda Berhasil Menambahkan Data');
     }
 
     public function edit($id)
     {
 
-        $user = User::where('id',$id)->with('roles')->first();
+        $user = User::where('id', $id)->with('roles')->first();
         $roles = Role::get();
-        return view('content.users.edit-user',compact('user','roles'));
+        return view('content.users.edit-user', compact('user', 'roles'));
     }
 
     public function destroy(Request $request)
     {
-        $user = User::where('id',$request->id)->first();
+        $user = User::where('id', $request->id)->first();
         $user->delete();
-        
+
         return response()->json('berhasil menghapus data');
     }
 
-    public function update (Request $request , $id)
+    public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->first();
+        $user = User::where('id', $id)->first();
         $password = $user->password;
 
         if ($request->password) {
@@ -73,7 +74,27 @@ class UserController extends Controller
             'nik' => $request->nik
         ]);
 
-        return redirect()->route('user-management')->with('success-update','Anda Berhasil Mengubah Data');
+        return redirect()->route('user-management')->with('success-update', 'Anda Berhasil Mengubah Data');
     }
-    
+
+    public function changepassword()
+    {
+        return view('content.users.change-password');
+    }
+
+    public function storechangepassword (Request $request)
+    {
+
+        
+        $this->validate($request,[
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+         ]);
+
+
+         User::where('id',Auth::user()->id)->update([
+            'password'  => bcrypt($request->password)
+         ]);
+
+         return back()->with('success-update','Data Berhasil Diubah');
+    }
 }

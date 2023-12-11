@@ -27,11 +27,7 @@ return new class extends Migration
             $table->string('status_hub_keluarga');
             $table->string('status_perkawinan');
             $table->date('tgl_perkawinan')->nullable();
-            $table->string('kewarganegaraan');            
-            $table->string('file_pengantar_rt');
-            $table->string('file_buku_nikah');
-            $table->string('file_kk_lama');
-            $table->string('file_ktp');
+            $table->string('kewarganegaraan');                       
             $table->timestamps();
         });
     }
