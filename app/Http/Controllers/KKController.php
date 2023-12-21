@@ -97,53 +97,8 @@ class KKController extends Controller
   }
 
   public function update(Request $request, $id)
-  {
-    $file_pengantar_rt = $request->file('pengantar_rt');
-    $file_kk_lama = $request->file('kk_lama');
-    $file_buku_nikah = $request->file('buku_nikah');
-    $file_ktp = $request->file('ktp');
-
+  {  
     $kk = KK::where('id', $id)->first();
-    $suratPengantar = $kk->file_pengantar_rt;
-    $kkLama = $kk->file_kk_lama;
-    $bukuNikah = $kk->file_buku_nikah;
-    $fcktp = $kk->file_ktp;
-
-    if ($file_pengantar_rt) {
-      Storage::disk('public')->delete($kk->file_pengantar_rt);
-      $file_pengantar_rt = $file_pengantar_rt->getClientOriginalName();
-      $time = time();
-      $suratPengantar = $time . $file_pengantar_rt;
-      $path = Storage::putFileAs('kk', $file_pengantar_rt, $suratPengantar);
-      $suratPengantar = $path;
-    }
-
-    if ($file_kk_lama) {
-      Storage::disk('public')->delete($kk->file_kk_lama);
-      $file_file_kk_lama = $file_kk_lama->getClientOriginalName();
-      $time = time();
-      $kkLama = $time . $file_file_kk_lama;
-      $path = Storage::putFileAs('kk', $file_kk_lama, $kkLama);
-      $kkLama = $path;
-    }
-
-    if ($file_buku_nikah) {
-      Storage::disk('public')->delete($kk->file_buku_nikah);
-      $file_file_buku_nikah = $file_buku_nikah->getClientOriginalName();
-      $time = time();
-      $bukuNikah = $time . $file_file_buku_nikah;
-      $path = Storage::putFileAs('kk', $file_buku_nikah, $bukuNikah);
-      $bukuNikah = $path;
-    }
-
-    if ($file_ktp) {
-      Storage::disk('public')->delete($kk->ktp);
-      $file_ktp = $file_ktp->getClientOriginalName();
-      $time = time();
-      $fcktp = $time . $file_ktp;
-      $path = Storage::putFileAs('kk', $file_ktp, $fcktp);
-      $fcktp = $path;
-    }
 
     $kk->update([
       'nik' => $request->nik,
@@ -159,11 +114,7 @@ class KKController extends Controller
       'tgl_perkawinan' => Carbon::parse($request->tgl_perkawinan)->format('Y-m-d'),
       'kewarganegaraan' => $request->kewarganegaraan,
       'nama_ayah' => $request->nama_ayah,
-      'nama_ibu' => $request->nama_ibu,
-      'file_pengantar_rt' => $suratPengantar,
-      'file_kk_lama' => $kkLama,
-      'file_buku_nikah' => $bukuNikah,
-      'file_ktp' => $fcktp
+      'nama_ibu' => $request->nama_ibu,   
     ]);
 
     return redirect()->route('kependudukan-kk.index')->with('success-update', 'Berhasil Mengubah Data');

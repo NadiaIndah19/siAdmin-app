@@ -13,7 +13,8 @@ class UserController extends Controller
     public function index()
     {
         $user = User::with('roles')->get();
-        // dd($user);        
+        
+              
         return view('content.users.user-management', compact('user'));
     }
 
