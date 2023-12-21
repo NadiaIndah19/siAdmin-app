@@ -54,7 +54,7 @@
                                 <a type="button" class="btn btn-primary btn-sm" href="#" onclick="generate()">Generate</a>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label" for="basic-icon-default-role">Role</label>
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-default-role2" class="input-group-text"><i
@@ -65,7 +65,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
