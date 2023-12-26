@@ -30,7 +30,7 @@
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-default-nik2" class="input-group-text"><i
                                         class="bx bxs-user-detail"></i></span>
-                                <input type="text" name="nik" id="basic-icon-default-nik" class="form-control"
+                                <input type="number" name="nik" id="basic-icon-default-nik" class="form-control"
                                     aria-describedby="basic-icon-default-nik2" required />
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <span id="basic-icon-default-password2" class="input-group-text"><i
                                         class="bx bx-key"></i></span>
                                 
-                                <input type="text" id="password" name="password" class="form-control password-mask" />
+                                <input type="password" id="password" name="password" class="form-control password-mask" />
                                 <a type="button" class="btn btn-primary btn-sm" href="#" onclick="generate()">Generate</a>
                             </div>
                         </div>
